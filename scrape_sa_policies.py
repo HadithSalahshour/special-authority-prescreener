@@ -22,7 +22,7 @@ import os
 import re
 import time
 import sys
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -100,7 +100,7 @@ def extract_criteria_text(soup: BeautifulSoup, drug_name: str) -> str:
     forms for doctors) — not criteria documents. We want the HTML criteria, not
     the forms.
     """
-    lines = [f"BC PharmaCare Special Authority Criteria", f"Drug: {drug_name}", ""]
+    lines = ["BC PharmaCare Special Authority Criteria", f"Drug: {drug_name}", ""]
 
     # Remove nav, header, footer, scripts, and the sidebar form elements
     for tag in soup(["script", "style", "nav", "header", "footer",
@@ -166,7 +166,7 @@ def scrape_drug(drug: dict, index: int, total: int) -> dict:
     text = extract_criteria_text(soup, name)
     if len(text.strip()) < 150:
         result["status"] = "no_content"
-        print(f"      → no usable content found")
+        print("      → no usable content found")
         return result
 
     with open(path, "w", encoding="utf-8") as f:
@@ -211,7 +211,7 @@ def run(limit: int | None = None, list_only: bool = False):
 
     # Summary
     print(f"\n{'=' * 60}")
-    print(f"  SCRAPE COMPLETE")
+    print("  SCRAPE COMPLETE")
     print(f"{'=' * 60}")
     print(f"  PDFs downloaded:   {len(results['pdf_downloaded'])}")
     print(f"  Text files saved:  {len(results['text_saved'])}")
@@ -222,13 +222,13 @@ def run(limit: int | None = None, list_only: bool = False):
     print(f"{'=' * 60}")
 
     if results["fetch_failed"]:
-        print(f"\nFailed drugs:")
+        print("\nFailed drugs:")
         for d in results["fetch_failed"]:
             print(f"  • {d}")
 
     print(f"\nAll files saved to: {POLICIES_DIR}")
-    print(f"\nNext step — re-ingest all policies:")
-    print(f"  python check.py --ingest")
+    print("\nNext step — re-ingest all policies:")
+    print("  python check.py --ingest")
 
 
 if __name__ == "__main__":

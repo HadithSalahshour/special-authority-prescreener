@@ -9,7 +9,6 @@ The output is replaced on each run; no existing or real records are read.
 
 import json
 import random
-import re
 import os
 import argparse
 from datetime import date, timedelta
@@ -178,8 +177,8 @@ def gen_iron_deficiency(drug, criteria, qualifying, age, gender):
     )
     if oral_iron:
         v2_notes += (
-            f"Initiated oral ferrous sulfate 300 mg three times daily. "
-            f"Patient counselled on dietary iron sources. Follow-up in 6 weeks."
+            "Initiated oral ferrous sulfate 300 mg three times daily. "
+            "Patient counselled on dietary iron sources. Follow-up in 6 weeks."
         )
     else:
         v2_notes += "Patient declines oral iron therapy. Reviewing alternative management options."
@@ -303,9 +302,6 @@ def gen_heart_failure(drug, criteria, qualifying, age, gender):
 def gen_copd(drug, criteria, qualifying, age, gender):
     dates = visit_date_seq(4)
     fev1_fvc = round(random.uniform(0.52, 0.67), 2) if qualifying else round(random.uniform(0.71, 0.80), 2)
-    failed_tio = qualifying
-    failed_umec = qualifying
-
     v1 = _visit(dates[0], "Chronic cough and shortness of breath.",
         f"Progressive exertional dyspnea over {random.randint(6,24)} months. Chronic productive cough. "
         f"Smoking history {random.randint(15,40)} pack-years. SpO2 {random.randint(90,95)}% on room air. "
@@ -366,8 +362,6 @@ def gen_atopic_dermatitis(drug, criteria, qualifying, age, gender):
     dates = visit_date_seq(5)
     easi = random.randint(18, 38) if qualifying else random.randint(8, 14)
     viga = random.randint(3, 4) if qualifying else random.randint(1, 2)
-    failed_systemic = qualifying
-
     v1 = _visit(dates[0], "Severe eczema flare.",
         f"Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. "
         f"EASI score {easi}. vIGA-AD score {viga}. Sleep disruption due to itch. "
@@ -709,8 +703,6 @@ def gen_pulmonary_hypertension(drug, criteria, qualifying, age, gender):
 def gen_migraine(drug, criteria, qualifying, age, gender):
     dates = visit_date_seq(4)
     monthly = random.randint(8, 20) if qualifying else random.randint(2, 3)
-    failed_prev = qualifying
-
     v1 = _visit(dates[0], "Frequent migraines.",
         f"Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. "
         f"Average {monthly} migraine days per month over the past 3 months. "
@@ -822,7 +814,7 @@ def gen_hepatitis(drug, criteria, qualifying, age, gender):
         f"ALT {random.randint(60, 180)} U/L. AST {random.randint(45, 130)} U/L. "
         f"Hepatitis {hcv} RNA: {viral_load}.",
         f"Chronic hepatitis {hcv}.",
-        f"Hepatology referral. Liver biopsy / FibroScan ordered.",
+        "Hepatology referral. Liver biopsy / FibroScan ordered.",
         f"Chronic hepatitis {hcv} confirmed. FibroScan and hepatology referral arranged.")
 
     v2 = _visit(dates[1], "Hepatology assessment.",
@@ -968,8 +960,6 @@ def gen_psychiatric(drug, criteria, qualifying, age, gender):
 
 def gen_insomnia(drug, criteria, qualifying, age, gender):
     dates = visit_date_seq(3)
-    criteria_text = " ".join(criteria).lower()
-
     # Pick a qualifying pathway from the criteria
     pathway = random.choice(["psychiatric", "benzos", "elderly"]) if qualifying else "none"
 
@@ -991,12 +981,12 @@ def gen_insomnia(drug, criteria, qualifying, age, gender):
             )
         elif pathway == "benzos":
             v2_notes = (
-                f"Patient has trialled and failed at least three benzodiazepines: "
-                f"lorazepam (tolerance developed), temazepam (morning hangover, discontinued), "
-                f"clonazepam (rebound insomnia). "
-                f"Also trialled one other hypnotic agent (trazodone — inadequate). "
-                f"Meets criteria for zopiclone under Special Authority. "
-                f"Special Authority request submitted."
+                "Patient has trialled and failed at least three benzodiazepines: "
+                "lorazepam (tolerance developed), temazepam (morning hangover, discontinued), "
+                "clonazepam (rebound insomnia). "
+                "Also trialled one other hypnotic agent (trazodone — inadequate). "
+                "Meets criteria for zopiclone under Special Authority. "
+                "Special Authority request submitted."
             )
         else:
             v2_notes = (
@@ -1026,14 +1016,12 @@ def gen_insomnia(drug, criteria, qualifying, age, gender):
 
 def gen_simple(drug, criteria, qualifying, age, gender):
     dates = visit_date_seq(3)
-    criteria_text = " ".join(criteria).lower()
-
     # Extract the condition from criteria or drug name
     condition = drug.replace("for", "—").title()
 
     v1 = _visit(dates[0], f"Assessment — {condition}.",
-        f"Patient presents for evaluation. Symptoms consistent with underlying condition. "
-        f"Relevant clinical history reviewed.",
+        "Patient presents for evaluation. Symptoms consistent with underlying condition. "
+        "Relevant clinical history reviewed.",
         condition,
         "Referral to specialist as appropriate.",
         f"Patient assessed for {condition}. Diagnostic workup initiated. Specialist referral arranged.")
@@ -1092,9 +1080,9 @@ def gen_oncology_support(drug, criteria, qualifying, age, gender):
         v2_prescribed = f"{drug.split()[0].title()} injection (SA requested by oncologist)."
     else:
         v2_notes = (
-            f"Chemotherapy regimen does not have high risk of febrile neutropenia (< 20% risk). "
-            f"G-CSF prophylaxis not indicated at this time. "
-            f"Monitoring CBC weekly. G-CSF initiated only if ANC < 0.5 × 10⁹/L with fever."
+            "Chemotherapy regimen does not have high risk of febrile neutropenia (< 20% risk). "
+            "G-CSF prophylaxis not indicated at this time. "
+            "Monitoring CBC weekly. G-CSF initiated only if ANC < 0.5 × 10⁹/L with fever."
         )
         v2_prescribed = "CBC monitoring weekly. G-CSF on standby PRN."
 
@@ -1120,17 +1108,17 @@ def gen_narcolepsy(drug, criteria, qualifying, age, gender):
 
     if qualifying:
         v2_notes = (
-            f"Narcolepsy confirmed on polysomnography and multiple sleep latency test (MSLT): "
-            f"mean sleep latency < 8 minutes, ≥ 2 sleep-onset REM periods. "
-            f"Diagnosis of narcolepsy confirmed. Patient meets criteria for modafinil under Special Authority. "
-            f"Special Authority request submitted. Patient counselled on driving restrictions."
+            "Narcolepsy confirmed on polysomnography and multiple sleep latency test (MSLT): "
+            "mean sleep latency < 8 minutes, ≥ 2 sleep-onset REM periods. "
+            "Diagnosis of narcolepsy confirmed. Patient meets criteria for modafinil under Special Authority. "
+            "Special Authority request submitted. Patient counselled on driving restrictions."
         )
         v2_prescribed = "Modafinil 200 mg daily (SA requested)."
     else:
         v2_notes = (
-            f"Sleep study results non-diagnostic for narcolepsy. Idiopathic hypersomnia considered. "
-            f"Does not meet diagnostic criteria for narcolepsy at this time. "
-            f"Further sleep specialist assessment arranged."
+            "Sleep study results non-diagnostic for narcolepsy. Idiopathic hypersomnia considered. "
+            "Does not meet diagnostic criteria for narcolepsy at this time. "
+            "Further sleep specialist assessment arranged."
         )
         v2_prescribed = "Sleep hygiene counselling. Caffeine restriction. Repeat sleep study."
 
@@ -1200,8 +1188,8 @@ def gen_antiemetic(drug, criteria, qualifying, age, gender):
         v2_prescribed = f"{drug.split()[0].title()} (SA requested by oncologist)."
     else:
         v2_notes = (
-            f"CINV adequately controlled on standard prophylaxis. "
-            f"NK1 antagonist not required at this time."
+            "CINV adequately controlled on standard prophylaxis. "
+            "NK1 antagonist not required at this time."
         )
         v2_prescribed = "Ondansetron 8 mg TID; Dexamethasone 8 mg BID."
 
@@ -1354,7 +1342,7 @@ def main():
         if (i + 1) % 50 == 0:
             print(f"  {i+1}/{len(assignments)} generated...")
 
-    print(f"\nCategory distribution:")
+    print("\nCategory distribution:")
     for cat, count in sorted(cats.items(), key=lambda x: -x[1]):
         print(f"  {cat:30s}: {count}")
 

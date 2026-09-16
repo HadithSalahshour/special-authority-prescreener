@@ -43,7 +43,7 @@ def run_check(patient_id: str, drug_query: str):
     age = patient.get("age") or "?"
 
     print(f"\n{LINE}")
-    print(f"  BC PHARMACARE — SPECIAL AUTHORITY CHECK")
+    print("  BC PHARMACARE — SPECIAL AUTHORITY CHECK")
     print(LINE)
     print(f"  Drug:    {matched_drug.upper()}")
     print(f"  Patient: {name}  |  ID: {patient_id}  |  Age: {age}")
@@ -65,7 +65,7 @@ def run_check(patient_id: str, drug_query: str):
 
     # Per-criterion report
     print(f"\n{LINE}")
-    print(f"  PER-CRITERION BREAKDOWN")
+    print("  PER-CRITERION BREAKDOWN")
     print(LINE)
 
     for i, r in enumerate(results, 1):

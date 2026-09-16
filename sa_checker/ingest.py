@@ -121,7 +121,7 @@ def ingest_all(policies_dir: str) -> list[dict]:
 
         criteria = _extract_criteria(drug_name, text)
         if not criteria:
-            print(f"  WARNING: no criteria extracted — skipping")
+            print("  WARNING: no criteria extracted — skipping")
             continue
         print(f"  Criteria extracted: {len(criteria)}")
         for i, c in enumerate(criteria, 1):
