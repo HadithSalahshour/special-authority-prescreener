@@ -27,18 +27,9 @@ paired with documentation guidance when evidence is absent or unclear.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    P[Synthetic patient record] --> C[Structured note chunks]
-    C --> D[Local dense embeddings]
-    C --> B[In-memory BM25]
-    D --> R[Reciprocal Rank Fusion]
-    B --> R
-    R --> L[Local Ollama evaluation]
-    K[Generated policy cache] --> L
-    L --> V[Verbatim citation and threshold checks]
-    V --> O[Clinician-reviewable pre-screen]
-```
+<p align="center">
+  <img src="docs/architecture.svg" alt="Vertical architecture diagram showing the local pre-screening pipeline" width="720">
+</p>
 
 The web server binds to `127.0.0.1`. The runtime has no cloud API integration,
 telemetry, external fonts, or browser persistence. See [Privacy](docs/PRIVACY.md)
