@@ -1,0 +1,75 @@
+{
+  "demo iron therapy for iron deficiency anemia": {
+    "criteria": [
+      "The record must explicitly document iron deficiency anemia.",
+      "Ferritin must be ≤ 100 mcg/L.",
+      "The record must document an inadequate response or intolerance to oral iron."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo heart therapy for chronic heart failure": {
+    "criteria": [
+      "The record must explicitly document chronic heart failure.",
+      "LVEF must be ≤ 40%.",
+      "The record must document symptoms despite tolerated standard therapy."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo inhaled therapy for copd": {
+    "criteria": [
+      "The record must explicitly document moderate or severe COPD.",
+      "The record must document persistent symptoms despite a prior inhaled therapy trial."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo biologic for atopic dermatitis": {
+    "criteria": [
+      "The record must explicitly document moderate or severe atopic dermatitis.",
+      "The record must document an adequate trial of topical therapy with insufficient response."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo arthritis therapy for rheumatoid arthritis": {
+    "criteria": [
+      "The record must explicitly document rheumatoid arthritis.",
+      "The record must document inadequate response to two prior disease-modifying therapies."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo bowel therapy for ulcerative colitis": {
+    "criteria": [
+      "The record must explicitly document moderate or severe ulcerative colitis.",
+      "The record must document inadequate response to conventional therapy."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo migraine preventive": {
+    "criteria": [
+      "The record must explicitly document at least eight migraine days per month.",
+      "The record must document inadequate response to two preventive therapies."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo osteoporosis therapy": {
+    "criteria": [
+      "The record must explicitly document osteoporosis or a qualifying fragility fracture.",
+      "The record must document intolerance or inadequate response to first-line therapy."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo asthma biologic": {
+    "criteria": [
+      "The record must explicitly document severe asthma.",
+      "Eosinophils must be ≥ 300 cells/µL.",
+      "The record must document persistent symptoms despite optimized inhaled therapy."
+    ],
+    "source_file": "synthetic-demo"
+  },
+  "demo multiple sclerosis therapy": {
+    "criteria": [
+      "The record must explicitly document relapsing multiple sclerosis.",
+      "The record must document active disease despite a prior disease-modifying therapy."
+    ],
+    "source_file": "synthetic-demo"
+  }
+}

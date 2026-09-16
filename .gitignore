@@ -1,0 +1,31 @@
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Runtime data and downloaded source material
+.local/
+data/policies/
+data/private/
+data/patient_records/
+patients.json
+*.log
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+
+# Archives and nested projects
+*.zip
+The-Health-Card/
+Plans-Knowledge-Strategies/

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BC Special Authority Pre-Screen — Local Research Prototype</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
+  font-size:14px;line-height:1.5;color:#0f172a;
+  background:#eef2f7;display:flex;-webkit-font-smoothing:antialiased;
+}
+
+/* ── Tokens ── */
+:root{
+  --navy:#0c2340;--navy2:#183356;
+  --blue:#2563eb;--blue-h:#1d4ed8;--blue-lt:#eff6ff;--blue-mid:#bfdbfe;
+  --green:#15803d;--green-bg:#f0fdf4;--green-b:#86efac;--green-mid:#dcfce7;
+  --red:#b91c1c;--red-bg:#fef2f2;--red-b:#fca5a5;--red-mid:#fee2e2;
+  --amber:#b45309;--amber-bg:#fffbeb;--amber-b:#fcd34d;--amber-mid:#fef3c7;
+  --s:#fff;--s2:#f8fafc;--s3:#f1f5f9;
+  --bd:#e2e8f0;--bd2:#cbd5e1;
+  --ink3:#64748b;--ink4:#94a3b8;
+  --r:8px;--r-lg:12px;
+  --sh:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+  --sh-md:0 4px 12px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+}
+
+/* ── Layout shell ── */
+.sidebar{
+  width:340px;flex-shrink:0;display:flex;flex-direction:column;
+  height:100vh;background:var(--s);border-right:1px solid var(--bd);
+  overflow:hidden;
+}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+
+/* ─────────────────── SIDEBAR HEADER ─────────────────── */
+.sb-head{
+  background:linear-gradient(155deg,var(--navy) 0%,var(--navy2) 100%);
+  padding:16px 18px 14px;flex-shrink:0;
+}
+.sb-org{
+  font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:5px;display:flex;align-items:center;gap:5px;
+}
+.sb-org-dot{width:5px;height:5px;background:#3b82f6;border-radius:50%;flex-shrink:0}
+.sb-title{font-size:14.5px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.015em}
+
+/* ─────────────────── PATIENT PANEL ─────────────────── */
+.pt-panel{
+  flex-shrink:0;background:var(--s);
+  border-bottom:2px solid var(--bd);
+}
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px 6px;
+}
+.panel-label{
+  font-size:9.5px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink4);
+}
+.panel-badge{
+  font-size:9.5px;font-weight:700;color:var(--ink4);
+  background:var(--s3);border:1px solid var(--bd);
+  padding:1px 7px;border-radius:99px;
+}
+.search-bar{
+  margin:0 12px 6px;display:flex;align-items:center;gap:7px;
+  background:var(--s2);border:1.5px solid var(--bd2);border-radius:7px;
+  padding:6px 10px;transition:border-color .15s,box-shadow .15s;
+}
+.search-bar:focus-within{
+  border-color:var(--blue);background:#fff;
+  box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+.si{color:var(--ink4);flex-shrink:0;width:13px;height:13px}
+.search-bar input{
+  border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:12.5px;color:#0f172a;flex:1;min-width:0;
+}
+.search-bar input::placeholder{color:var(--ink4)}
+.sx{
+  background:none;border:none;cursor:pointer;
+  color:var(--ink4);font-size:15px;line-height:1;padding:0;flex-shrink:0;display:none;
+}
+.sx:hover{color:#0f172a}
+
+/* Patient list */
+.pt-list{max-height:200px;overflow-y:auto;border-top:1px solid var(--bd)}
+.pt-row{
+  display:flex;align-items:center;gap:9px;padding:7px 14px;
+  cursor:pointer;border-left:3px solid transparent;
+  border-bottom:1px solid #f8fafc;transition:background .1s,border-color .1s;
+}
+.pt-row:last-child{border-bottom:none}
+.pt-row:hover{background:var(--s2)}
+.pt-row.sel{background:#eff6ff;border-left-color:var(--blue)}
+.pt-av{
+  width:28px;height:28px;border-radius:7px;background:#e2e8f0;color:#64748b;
+  font-size:10.5px;font-weight:800;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;
+}
+.pt-row.sel .pt-av{background:var(--blue);color:#fff}
+.pt-info{flex:1;min-width:0}
+.pt-name{
+  font-size:12.5px;font-weight:600;color:#1e293b;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.pt-row.sel .pt-name{color:#1e40af}
+.pt-sub{font-size:10.5px;color:var(--ink4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.pt-chk{color:var(--blue);font-size:12px;flex-shrink:0;opacity:0}
+.pt-row.sel .pt-chk{opacity:1}
+.list-empty{padding:14px 16px;font-size:12px;color:var(--ink4);text-align:center}
+
+/* ─────────────────── MEDICATIONS PANEL ─────────────────── */
+.drug-panel{
+  flex:1;min-height:0;display:flex;flex-direction:column;
+  background:#f6f8fb;
+}
+.drug-list{
+  flex:1;min-height:0;overflow-y:auto;
+  border-top:1px solid var(--bd);
+}
+.drug-row{
+  display:flex;align-items:center;gap:8px;padding:7px 14px;
+  cursor:pointer;border-left:3px solid transparent;
+  border-bottom:1px solid #eef1f5;transition:background .1s,border-color .1s;
+}
+.drug-row:last-child{border-bottom:none}
+.drug-row:hover{background:#edf0f5}
+.drug-row.sel{background:#f0fdf4;border-left-color:var(--green)}
+.drug-chkbox{
+  width:16px;height:16px;border-radius:4px;border:1.5px solid var(--bd2);
+  background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  transition:all .12s;
+}
+.drug-row.sel .drug-chkbox{background:var(--green);border-color:var(--green)}
+.drug-chkbox-tick{color:#fff;font-size:9px;font-weight:900;display:none}
+.drug-row.sel .drug-chkbox-tick{display:block}
+.drug-name{
+  flex:1;font-size:12.5px;font-weight:500;color:#1e293b;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
+}
+.drug-row.sel .drug-name{font-weight:600;color:#166534}
+.cat-tag{
+  font-size:9px;font-weight:700;padding:2px 6px;border-radius:99px;
+  flex-shrink:0;white-space:nowrap;max-width:66px;
+  overflow:hidden;text-overflow:ellipsis;
+}
+
+/* ─────────────────── ACTION ZONE ─────────────────── */
+.action-zone{
+  flex-shrink:0;background:var(--s);border-top:1px solid var(--bd);
+  padding:10px 12px 6px;
+}
+.check-btn{
+  width:100%;padding:11px 16px;background:var(--blue);color:#fff;
+  border:none;border-radius:var(--r);font-size:13.5px;font-weight:700;
+  font-family:inherit;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;gap:7px;transition:background .15s,transform .1s;
+}
+.check-btn:hover:not(:disabled){background:var(--blue-h);transform:translateY(-1px)}
+.check-btn:active:not(:disabled){transform:translateY(0)}
+.check-btn:disabled{background:#e2e8f0;color:var(--ink4);cursor:not-allowed;transform:none}
+
+/* Recent */
+.recent-wrap{padding:4px 0 6px}
+.recent-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 16px 4px;
+}
+.r-item{
+  display:flex;align-items:center;gap:8px;padding:5px 16px;
+  cursor:pointer;transition:background .1s;
+}
+.r-item:hover{background:var(--s2)}
+.r-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.r-dot.q{background:var(--green)}.r-dot.nq{background:var(--red)}
+.r-body{flex:1;min-width:0}
+.r-pt{font-size:11.5px;font-weight:600;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r-drug{font-size:10.5px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r-time{font-size:10px;color:var(--ink4);flex-shrink:0}
+.r-empty{padding:5px 16px;font-size:11.5px;color:var(--ink4);font-style:italic}
+.r-del{
+  flex-shrink:0;width:18px;height:18px;border:none;background:none;
+  color:var(--ink4);font-size:15px;line-height:1;cursor:pointer;
+  border-radius:4px;opacity:0;transition:opacity .1s,background .1s,color .1s;
+  display:flex;align-items:center;justify-content:center;padding:0;
+}
+.r-item:hover .r-del{opacity:1}
+.r-del:hover{background:#fee2e2;color:var(--red)}
+
+/* ─────────────────── TOPBAR ─────────────────── */
+.topbar{
+  background:var(--s);border-bottom:1px solid var(--bd);
+  padding:0 28px;height:48px;display:flex;align-items:center;
+  justify-content:space-between;flex-shrink:0;
+}
+.crumb{display:flex;align-items:center;gap:6px;font-size:12.5px}
+.crumb-org{color:var(--ink4);font-weight:500}
+.crumb-sep{color:var(--ink4)}
+.crumb-page{color:#1e293b;font-weight:700}
+.topbar-pt{
+  display:none;align-items:center;gap:8px;
+  font-size:12px;color:var(--ink3);
+}
+.topbar-pt.visible{display:flex}
+.topbar-av{
+  width:24px;height:24px;border-radius:6px;background:var(--navy);
+  color:#fff;font-size:9.5px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.topbar-name{font-weight:600;color:#1e293b}
+
+/* ─────────────────── CONTENT ─────────────────── */
+.content{flex:1;overflow-y:auto;display:flex;flex-direction:column;min-height:0}
+
+/* ─────────────────── EMPTY STATE ─────────────────── */
+.empty-state{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:10px;padding:40px;
+}
+.empty-icon{color:#cbd5e1}
+.empty-msg{font-size:13.5px;color:var(--ink4);text-align:center;max-width:280px;line-height:1.65}
+
+/* ─────────────────── MULTI-DRUG PROGRESS ─────────────────── */
+.progress-state{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:20px;padding:40px;
+}
+.prog-title{font-size:15px;font-weight:700;color:#1e293b}
+.prog-sub{font-size:12px;color:var(--ink3);margin-top:-12px}
+.prog-list{
+  width:100%;max-width:440px;background:var(--s);border:1px solid var(--bd);
+  border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);
+}
+.prog-item{
+  display:flex;align-items:center;gap:12px;padding:12px 18px;
+  border-bottom:1px solid var(--bd);
+}
+.prog-item:last-child{border-bottom:none}
+.prog-icon{width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prog-spin{
+  width:18px;height:18px;border:2.5px solid var(--bd2);
+  border-top-color:var(--blue);border-radius:50%;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.prog-drug{flex:1;font-size:12.5px;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog-status{font-size:11px;font-weight:700;flex-shrink:0}
+.prog-status.checking{color:var(--blue)}
+.prog-status.done-q{color:var(--green)}
+.prog-status.done-nq{color:var(--red)}
+.prog-status.pending{color:var(--ink4)}
+
+/* ─────────────────── RESULTS AREA ─────────────────── */
+.results-outer{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+
+/* Patient header bar */
+.pt-bar{
+  flex-shrink:0;display:flex;align-items:center;gap:12px;
+  padding:10px 28px;background:var(--s);border-bottom:1px solid var(--bd);
+  box-shadow:var(--sh);
+}
+.pt-bar-av{
+  width:34px;height:34px;border-radius:9px;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:12px;font-weight:800;flex-shrink:0;
+}
+.pt-bar-info{flex:1;min-width:0}
+.pt-bar-name{font-size:13.5px;font-weight:700;color:#0f172a}
+.pt-bar-sub{font-size:11.5px;color:var(--ink3);margin-top:1px}
+.new-check{
+  font-size:12px;font-weight:600;color:var(--blue);
+  background:var(--blue-lt);border:1px solid var(--blue-mid);
+  border-radius:6px;padding:5px 12px;cursor:pointer;
+  white-space:nowrap;text-decoration:none;
+  transition:background .12s;
+}
+.new-check:hover{background:var(--blue-mid)}
+
+/* Drug tabs */
+.drug-tabs{
+  flex-shrink:0;display:flex;align-items:stretch;
+  background:var(--s2);border-bottom:1px solid var(--bd);
+  padding:0 20px;gap:2px;overflow-x:auto;
+}
+.drug-tab{
+  display:flex;align-items:center;gap:6px;
+  padding:10px 14px;cursor:pointer;
+  border-bottom:2.5px solid transparent;
+  white-space:nowrap;font-size:12.5px;color:var(--ink3);font-weight:500;
+  transition:color .12s,border-color .12s;flex-shrink:0;
+}
+.drug-tab:hover{color:#1e293b}
+.drug-tab.active{color:#1e293b;font-weight:700;border-bottom-color:var(--blue)}
+.tab-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.tab-dot.q{background:var(--green)}
+.tab-dot.nq{background:var(--red)}
+.tab-dot.pending{background:var(--bd2)}
+.tab-dot.checking{background:var(--blue);animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* Tab content */
+.tab-content{flex:1;overflow-y:auto;padding:22px 28px}
+
+/* ─────────────────── VERDICT ─────────────────── */
+.verdict-banner{
+  border-radius:var(--r-lg);padding:18px 22px;margin-bottom:16px;
+  display:flex;align-items:flex-start;gap:14px;border:1.5px solid;
+}
+.verdict-banner.q{background:var(--green-bg);border-color:var(--green-b)}
+.verdict-banner.nq{background:var(--red-bg);border-color:var(--red-b)}
+.v-icon{
+  width:42px;height:42px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;
+}
+.q .v-icon{background:var(--green-mid)}.nq .v-icon{background:var(--red-mid)}
+.v-right{flex:1}
+.v-lbl{font-size:19px;font-weight:800;letter-spacing:-.02em;margin-bottom:1px}
+.q .v-lbl{color:var(--green)}.nq .v-lbl{color:var(--red)}
+.v-sub{font-size:12px;color:var(--ink3);margin-bottom:12px}
+.prog-row{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);margin-bottom:4px}
+.prog-track{height:5px;background:rgba(0,0,0,.07);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;border-radius:99px;transition:width .8s ease}
+.q .prog-fill{background:var(--green)}.nq .prog-fill{background:var(--red)}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.stat-card{
+  background:var(--s);border:1px solid var(--bd);border-radius:var(--r);
+  padding:10px 12px;text-align:center;box-shadow:var(--sh);
+}
+.stat-n{font-size:22px;font-weight:800;line-height:1;margin-bottom:2px;letter-spacing:-.02em}
+.stat-l{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4)}
+.s-g .stat-n{color:var(--green)}.s-r .stat-n{color:var(--red)}
+.s-a .stat-n{color:var(--amber)}.s-b .stat-n{color:var(--blue)}
+
+/* Criteria */
+.crit-hdg{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--ink4);margin-bottom:8px}
+.crit-card{
+  background:var(--s);border:1px solid var(--bd);border-left:4px solid;
+  border-radius:var(--r);margin-bottom:7px;box-shadow:var(--sh);overflow:hidden;
+}
+.crit-card.s-met{border-left-color:#22c55e}
+.crit-card.s-nm {border-left-color:#ef4444}
+.crit-card.s-unc{border-left-color:#f59e0b}
+.crit-head{display:flex;align-items:center;gap:9px;padding:11px 14px;cursor:pointer;user-select:none}
+.crit-n{font-size:10.5px;font-weight:800;color:var(--ink4);min-width:18px;flex-shrink:0}
+.crit-badge{font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:5px;letter-spacing:.04em;flex-shrink:0;white-space:nowrap}
+.b-met{background:var(--green-mid);color:var(--green)}
+.b-nm {background:var(--red-mid);  color:var(--red)}
+.b-unc{background:var(--amber-mid);color:var(--amber)}
+.crit-txt{font-size:12.5px;color:#1e293b;flex:1;line-height:1.4}
+.crit-chev{color:var(--ink4);flex-shrink:0;font-size:10px;transition:transform .15s}
+.crit-card.open .crit-chev{transform:rotate(180deg)}
+.crit-body{
+  display:none;flex-direction:column;gap:8px;
+  padding:11px 14px;border-top:1px solid var(--bd);background:var(--s2);
+}
+.crit-card.open .crit-body{display:flex}
+.det-row{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:start}
+.det-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);padding-top:2px}
+.det-ev{
+  font-size:11.5px;font-style:italic;color:#1e293b;line-height:1.6;
+  padding:8px 12px;background:#fff;border-left:3px solid #86efac;border-radius:0 6px 6px 0;
+}
+.det-re{font-size:11.5px;color:var(--ink3);line-height:1.55}
+.det-ac{
+  font-size:11.5px;color:#92400e;line-height:1.6;
+  background:var(--amber-bg);border:1px solid var(--amber-b);border-radius:7px;padding:8px 12px;
+}
+.det-ac-lbl{display:block;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:2px}
+
+.err-box{
+  background:var(--red-bg);border:1px solid var(--red-b);
+  border-radius:var(--r);padding:12px 16px;color:var(--red);font-size:13px;margin-bottom:12px;
+}
+
+/* ─────────────────── SCROLLBAR ─────────────────── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--ink4)}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<aside class="sidebar">
+  <!-- Header -->
+  <div class="sb-head">
+    <div class="sb-org"><span class="sb-org-dot"></span>Local research prototype</div>
+    <div class="sb-title">BC Special Authority Pre-Screen</div>
+  </div>
+
+  <!-- ── Patient panel ── -->
+  <div class="pt-panel">
+    <div class="panel-head">
+      <span class="panel-label">Patient</span>
+      <span class="panel-badge" id="pt-count">—</span>
+    </div>
+    <div class="search-bar">
+      <svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="pt-search" placeholder="Filter patients…" autocomplete="off"/>
+      <button class="sx" id="pt-sx" onclick="clearPtSearch()">×</button>
+    </div>
+    <div class="pt-list" id="pt-list"></div>
+  </div>
+
+  <!-- ── Medications panel ── -->
+  <div class="drug-panel">
+    <div class="panel-head">
+      <span class="panel-label">Medications</span>
+      <span class="panel-badge" id="drug-sel-badge">—</span>
+    </div>
+    <div class="search-bar" style="background:#edf0f6;border-color:#c4ccd8">
+      <svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="drug-search" placeholder="Filter medications…" autocomplete="off" style="background:transparent"/>
+      <button class="sx" id="drug-sx" onclick="clearDrugSearch()">×</button>
+    </div>
+    <div class="drug-list" id="drug-list"></div>
+  </div>
+
+  <!-- ── Action zone ── -->
+  <div class="action-zone">
+    <button class="check-btn" id="check-btn" onclick="saCheck()" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span id="check-btn-txt">Check Eligibility</span>
+    </button>
+    <!-- Recent -->
+    <div class="recent-wrap">
+      <div class="recent-head">
+        <span class="panel-label">Recent</span>
+      </div>
+      <div id="recent-list"><div class="r-empty">No evaluations yet</div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="main">
+  <div class="topbar">
+    <div class="crumb">
+      <span class="crumb-org">Synthetic demo</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-page">Local Special Authority Pre-Screen</span>
+    </div>
+    <span id="mode-badge" title="Fictional criteria for software demonstration only"
+      style="font-size:10px;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;padding:3px 8px;border-radius:99px">
+      Synthetic criteria
+    </span>
+    <div class="topbar-pt" id="topbar-pt">
+      <div class="topbar-av" id="topbar-av"></div>
+      <span class="topbar-name" id="topbar-name"></span>
+    </div>
+  </div>
+  <div class="content" id="content"></div>
+</main>
+
+<script>
+/* ═══════════ STATE ═══════════ */
+let _pts    = [];
+let _drugs  = [];
+let _selPt  = null;
+let _selDrugs = new Set();   // multi-select
+let _results  = new Map();   // drug → result data
+let _activeTab = null;
+let _checking  = false;
+let _recent = [];          // session-only; nothing is persisted in the browser
+
+function verdictMeta(verdict){
+  if(verdict==='POTENTIALLY_ELIGIBLE')return{cls:'q',label:'Potentially eligible',icon:'✅'};
+  if(verdict==='MANUAL_REVIEW_REQUIRED')return{cls:'nq',label:'Manual review required',icon:'⚠️'};
+  return{cls:'nq',label:'Documentation gaps found',icon:'📋'};
+}
+
+/* ═══════════ HELPERS ═══════════ */
+function esc(s){
+  return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function initials(n){
+  const p=(n||'').trim().split(/\s+/);
+  return p.length>=2?(p[0][0]+p[p.length-1][0]).toUpperCase():(n||'?')[0].toUpperCase();
+}
+function fmtDate(d){
+  if(!d)return'';
+  try{return new Date(d).toLocaleDateString('en-CA',{month:'short',year:'numeric'})}catch{return d}
+}
+function timeAgo(ts){
+  const s=Math.floor((Date.now()-ts)/1000);
+  if(s<60)return'just now';
+  if(s<3600)return Math.floor(s/60)+'m ago';
+  if(s<86400)return Math.floor(s/3600)+'h ago';
+  return Math.floor(s/86400)+'d ago';
+}
+function drugCat(n){
+  n=n.toLowerCase();
+  if(/copd|aclidinium|umeclidinium|tiotropium|formoterol|indacaterol|olodaterol|roflumilast|budesonide inhaler/.test(n))return['Pulmonology','#0891b2'];
+  if(/asthma|omalizumab|mepolizumab|benralizumab|tezepelumab/.test(n))return['Pulmonology','#0891b2'];
+  if(/pulmonary arterial|ambrisentan|bosentan|treprostinil|macitentan|riociguat|vericiguat|sacubitril|ivabradine/.test(n))return['Cardiology','#e11d48'];
+  if(/statin|simvastatin|lovastatin|pravastatin|rosuvastatin|atorvastatin|dyslipid/.test(n))return['Cardiology','#e11d48'];
+  if(/atopic|eczema|dupilumab|abrocitinib|tralokinumab|lebrikizumab|psoriasis|secukinumab|ixekizumab|guselkumab|risankizumab|bimekizumab|tazarotene|pimecrolimus|alitretinoin/.test(n))return['Dermatology','#7c3aed'];
+  if(/ustekinumab for plaque/.test(n))return['Dermatology','#7c3aed'];
+  if(/rheumatoid|abatacept|adalimumab|etanercept|tocilizumab|tofacitinib|baricitinib|upadacitinib for (rheumatoid|psa)|filgotinib|certolizumab|golimumab|infliximab/.test(n))return['Rheumatology','#0284c7'];
+  if(/crohn|ulcerative colitis|inflammatory bowel|vedolizumab|ozanimod/.test(n))return['Gastroenterology','#15803d'];
+  if(/ustekinumab for (crohn|colitis)/.test(n))return['Gastroenterology','#15803d'];
+  if(/multiple sclerosis|alemtuzumab|natalizumab|siponimod|cladribine|dimethyl|interferon beta|glatiramer|ponesimod|ocrelizumab|ofatumumab/.test(n))return['Neurology','#6d28d9'];
+  if(/migraine|fremanezumab|galcanezumab|eptinezumab|erenumab|atogepant|rimegepant|ubrogepant/.test(n))return['Neurology','#6d28d9'];
+  if(/hepatitis|sofosbuvir|ledipasvir|glecaprevir|elbasvir|entecavir|tenofovir/.test(n))return['Hepatology','#b45309'];
+  if(/osteoporosis|denosumab|zoledronic|romosozumab|abaloparatide|raloxifene|risedronate|alendronate/.test(n))return['Endocrinology','#0f766e'];
+  if(/diabetes|insulin|thyroid|somatropin/.test(n))return['Endocrinology','#0f766e'];
+  if(/schizophrenia|psychosis|aripiprazole|clozapine|paliperidone|quetiapine|lurasidone/.test(n))return['Psychiatry','#6d28d9'];
+  if(/iron|ferric|ferumoxytol|anemia/.test(n))return['Hematology','#be185d'];
+  if(/neutropenia|filgrastim|pegfilgrastim|ondansetron|aprepitant|palonosetron/.test(n))return['Oncology','#374151'];
+  if(/insomnia|zopiclone|narcolepsy|modafinil/.test(n))return['Sleep Medicine','#1d4ed8'];
+  if(/antiviral|oseltamivir|zanamivir|vancomycin|voriconazole/.test(n))return['Infectious Disease','#065f46'];
+  return['General','#64748b'];
+}
+
+/* ═══════════ INIT ═══════════ */
+async function init(){
+  showEmpty();
+  renderRecent();
+  try{
+    const[pRes,dRes]=await Promise.all([fetch('/sa-patients'),fetch('/sa-drugs')]);
+    const pData=await pRes.json(), dData=await dRes.json();
+    _pts=pData.patients; _drugs=dData.drugs;
+    const modeBadge=document.getElementById('mode-badge');
+    modeBadge.textContent=dData.mode==='fictional-demo'?'Synthetic criteria':'Local policy snapshot';
+    modeBadge.title=dData.notice||'';
+    document.getElementById('pt-count').textContent=_pts.length;
+    renderPtList(''); renderDrugList('');
+  }catch(e){console.warn('init:',e)}
+}
+
+/* ═══════════ PATIENT LIST ═══════════ */
+function renderPtList(q){
+  const el=document.getElementById('pt-list');
+  const list=q?_pts.filter(p=>(p.name||'').toLowerCase().includes(q)||p.id.toLowerCase().includes(q)):_pts;
+  if(!list.length){el.innerHTML='<div class="list-empty">No patients match</div>';return}
+  el.innerHTML=list.map(p=>{
+    const sel=_selPt&&_selPt.id===p.id;
+    const sub=[p.id,p.age?p.age+'y':null,p.city].filter(Boolean).join(' · ');
+    return`<div class="pt-row${sel?' sel':''}" data-pid="${esc(p.id)}" onclick="pickPt(this)">
+      <div class="pt-av">${esc(initials(p.name||p.id))}</div>
+      <div class="pt-info">
+        <div class="pt-name">${esc(p.name||p.id)}</div>
+        <div class="pt-sub">${esc(sub)}</div>
+      </div>
+      <span class="pt-chk">✓</span>
+    </div>`;
+  }).join('');
+}
+function pickPt(el){
+  const pid=el.dataset.pid;
+  if(_selPt&&_selPt.id===pid){
+    _selPt=null;               // click the selected patient again to deselect
+  } else {
+    _selPt=_pts.find(p=>p.id===pid)||null;
+  }
+  renderPtList(document.getElementById('pt-search').value.toLowerCase());
+  updateTopbarPt();
+  updateBtn();
+  if(_selPt)el.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function clearPtSearch(){
+  document.getElementById('pt-search').value='';
+  document.getElementById('pt-sx').style.display='none';
+  renderPtList('');
+}
+document.getElementById('pt-search').addEventListener('input',e=>{
+  const v=e.target.value.toLowerCase();
+  document.getElementById('pt-sx').style.display=v?'block':'none';
+  renderPtList(v);
+});
+
+/* ═══════════ DRUG LIST (multi-select) ═══════════ */
+function renderDrugList(q){
+  const el=document.getElementById('drug-list');
+  const list=q?_drugs.filter(d=>d.toLowerCase().includes(q)):_drugs;
+  if(!list.length){el.innerHTML='<div class="list-empty">No medications match</div>';return}
+  el.innerHTML=list.map(d=>{
+    const sel=_selDrugs.has(d);
+    const[cat,col]=drugCat(d);
+    return`<div class="drug-row${sel?' sel':''}" data-drug="${esc(d)}" onclick="pickDrug(this)">
+      <div class="drug-chkbox"><span class="drug-chkbox-tick">✓</span></div>
+      <span class="drug-name">${esc(d)}</span>
+      <span class="cat-tag" style="background:${col}15;color:${col}">${esc(cat)}</span>
+    </div>`;
+  }).join('');
+}
+function pickDrug(el){
+  const drug=el.dataset.drug;
+  if(_selDrugs.has(drug)){
+    _selDrugs.delete(drug);
+  } else {
+    if(_selDrugs.size>=5){
+      // quietly ignore — could show a toast here
+      return;
+    }
+    _selDrugs.add(drug);
+  }
+  renderDrugList(document.getElementById('drug-search').value.toLowerCase());
+  updateBtn();
+}
+function clearDrugSearch(){
+  document.getElementById('drug-search').value='';
+  document.getElementById('drug-sx').style.display='none';
+  renderDrugList('');
+}
+document.getElementById('drug-search').addEventListener('input',e=>{
+  const v=e.target.value.toLowerCase();
+  document.getElementById('drug-sx').style.display=v?'block':'none';
+  renderDrugList(v);
+});
+
+/* ═══════════ BUTTON + TOPBAR ═══════════ */
+function updateBtn(){
+  const btn=document.getElementById('check-btn');
+  const txt=document.getElementById('check-btn-txt');
+  const badge=document.getElementById('drug-sel-badge');
+  const n=_selDrugs.size;
+  badge.textContent=n>0?`${n} selected`:`${_drugs.length||'—'}`;
+  const ok=!!_selPt&&n>0&&!_checking;
+  btn.disabled=!ok;
+  txt.textContent=n>1?`Check ${n} Medications`:`Check Eligibility`;
+}
+function updateTopbarPt(){
+  const el=document.getElementById('topbar-pt');
+  const av=document.getElementById('topbar-av');
+  const nm=document.getElementById('topbar-name');
+  if(_selPt){
+    av.textContent=initials(_selPt.name||_selPt.id);
+    nm.textContent=_selPt.name||_selPt.id;
+    el.classList.add('visible');
+  } else {
+    el.classList.remove('visible');
+  }
+}
+
+/* ═══════════ EMPTY STATE ═══════════ */
+function showEmpty(){
+  document.getElementById('content').innerHTML=`
+    <div class="empty-state">
+      <svg class="empty-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <rect x="3" y="3" width="18" height="18" rx="3"/>
+        <path d="M9 9h6M9 12h6M9 15h4"/>
+      </svg>
+      <div class="empty-msg">Select a synthetic patient, then choose one or more demo medications for a local pre-screen.</div>
+    </div>`;
+}
+
+/* ═══════════ MULTI-DRUG CHECK ═══════════ */
+async function saCheck(){
+  if(!_selPt||_selDrugs.size===0||_checking)return;
+  _checking=true;
+  _results.clear();
+  _activeTab=null;
+  updateBtn();
+
+  const drugs=[..._selDrugs];
+
+  // Show progress UI
+  showProgress(drugs);
+
+  for(const drug of drugs){
+    setProgStatus(drug,'checking');
+    try{
+      const res=await fetch('/sa-check',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({patient_id:_selPt.id,drug}),
+      });
+      if(!res.ok){
+        const err=await res.json().catch(()=>({detail:res.statusText}));
+        _results.set(drug,{error:err.detail||'Server error'});
+        setProgStatus(drug,'error');
+      } else {
+        const data=await res.json();
+        _results.set(drug,data);
+        setProgStatus(drug,data.verdict==='POTENTIALLY_ELIGIBLE'?'done-q':'done-nq');
+        saveRecent(data);
+      }
+    }catch(e){
+      _results.set(drug,{error:'Could not reach server.'});
+      setProgStatus(drug,'error');
+    }
+  }
+
+  _checking=false;
+  updateBtn();
+  // Switch to results view
+  showResultsView(drugs);
+}
+
+/* ── Progress screen ── */
+function showProgress(drugs){
+  const rows=drugs.map(d=>`
+    <div class="prog-item" id="pi-${CSS.escape(d)}">
+      <div class="prog-icon"><div class="prog-spin" id="ps-${CSS.escape(d)}"></div></div>
+      <span class="prog-drug">${esc(d)}</span>
+      <span class="prog-status checking" id="pst-${CSS.escape(d)}">Pending…</span>
+    </div>`).join('');
+  document.getElementById('content').innerHTML=`
+    <div class="progress-state">
+      <div class="prog-title">Evaluating ${drugs.length} medication${drugs.length>1?'s':''}</div>
+      <div class="prog-sub">${esc(_selPt.name||_selPt.id)}</div>
+      <div class="prog-list">${rows}</div>
+    </div>`;
+  // First one starts immediately — mark as checking
+  if(drugs.length)setProgStatus(drugs[0],'checking');
+}
+
+function setProgStatus(drug,state){
+  const key=CSS.escape(drug);
+  const spinEl=document.getElementById('ps-'+key);
+  const statEl=document.getElementById('pst-'+key);
+  if(!statEl)return;
+  statEl.className='prog-status '+state;
+  const labels={checking:'Checking…','done-q':'Potentially eligible','done-nq':'Review result',error:'Error',pending:'Pending'};
+  statEl.textContent=labels[state]||state;
+  if(spinEl){
+    if(state==='checking'){
+      spinEl.className='prog-spin';
+    } else {
+      const icons={
+        'done-q':'<span style="font-size:14px">✅</span>',
+        'done-nq':'<span style="font-size:14px">❌</span>',
+        'error':'<span style="color:var(--red);font-size:14px">⚠</span>',
+      };
+      spinEl.outerHTML=icons[state]||'<span style="color:var(--ink4)">—</span>';
+    }
+  }
+}
+
+/* ═══════════ RESULTS VIEW ═══════════ */
+function showResultsView(drugs){
+  const sub=[_selPt.id,_selPt.age?_selPt.age+' y/o':null,_selPt.city].filter(Boolean).join(' · ');
+  const tabs=drugs.map((d,i)=>{
+    const r=_results.get(d);
+    const dotCls=r?.error?'nq':verdictMeta(r?.verdict).cls;
+    return`<div class="drug-tab${i===0?' active':''}" data-drug="${esc(d)}" onclick="switchTab(this)">
+      <span class="tab-dot ${dotCls}"></span>${esc(d)}
+    </div>`;
+  }).join('');
+
+  document.getElementById('content').innerHTML=`
+    <div class="results-outer">
+      <div class="pt-bar">
+        <div class="pt-bar-av">${esc(initials(_selPt.name||_selPt.id))}</div>
+        <div class="pt-bar-info">
+          <div class="pt-bar-name">${esc(_selPt.name||_selPt.id)}</div>
+          <div class="pt-bar-sub">${esc(sub)}</div>
+        </div>
+        <a class="new-check" href="#" onclick="resetToSelection();return false">+ New Check</a>
+      </div>
+      ${drugs.length>1?`<div class="drug-tabs">${tabs}</div>`:''}
+      <div class="tab-content" id="tab-content"></div>
+    </div>`;
+
+  _activeTab=drugs[0];
+  renderTabContent(_activeTab);
+}
+
+function switchTab(el){
+  document.querySelectorAll('.drug-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  _activeTab=el.dataset.drug;
+  renderTabContent(_activeTab);
+}
+
+function renderTabContent(drug){
+  const tc=document.getElementById('tab-content');
+  if(!tc)return;
+  const r=_results.get(drug);
+  if(!r){tc.innerHTML='<div class="err-box">No result available.</div>';return}
+  if(r.error){tc.innerHTML=`<div class="err-box">⚠ ${esc(r.error)}</div>`;return}
+  tc.innerHTML=buildResultHTML(r);
+}
+
+function buildResultHTML(data){
+  const meta=verdictMeta(data.verdict);
+  const q=meta.cls==='q';
+  const met=data.met_count,total=data.total;
+  const unclear=data.results.filter(r=>r.status==='UNCLEAR').length;
+  const notMet=total-met-unclear;
+  const pct=total?Math.round((met/total)*100):0;
+
+  const cards=data.results.map((r,i)=>{
+    const sc=r.status==='MET'?'met':r.status==='NOT MET'?'nm':'unc';
+    const bc=`b-${sc}`;
+    const isOpen=r.status!=='MET';
+    const ev=r.citation?`<div class="det-row"><span class="det-lbl">Evidence</span><div class="det-ev">"${esc(r.citation)}"</div></div>`:'';
+    const re=r.reasoning?`<div class="det-row"><span class="det-lbl">Reasoning</span><div class="det-re">${esc(r.reasoning)}</div></div>`:'';
+    const ac=r.needed?`<div class="det-row"><span class="det-lbl">Action</span><div class="det-ac"><span class="det-ac-lbl">Documentation Required</span>${esc(r.needed)}</div></div>`:'';
+    const hasBody=ev||re||ac;
+    return`<div class="crit-card s-${sc}${isOpen?' open':''}" id="cc${i}">
+      <div class="crit-head" onclick="toggle(${i})">
+        <span class="crit-n">${i+1}</span>
+        <span class="crit-badge ${bc}">${esc(r.status)}</span>
+        <span class="crit-txt">${esc(r.criterion)}</span>
+        ${hasBody?'<span class="crit-chev">▾</span>':''}
+      </div>
+      ${hasBody?`<div class="crit-body">${ev}${re}${ac}</div>`:''}
+    </div>`;
+  }).join('');
+
+  return`
+    <div class="verdict-banner ${q?'q':'nq'}">
+      <div class="v-icon">${meta.icon}</div>
+      <div class="v-right">
+        <div class="v-lbl">${meta.label}</div>
+        <div class="v-sub">${met} of ${total} criteria met · clinician verification required</div>
+        <div class="prog-row"><span>Criteria met</span><span style="font-weight:700">${pct}%</span></div>
+        <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card s-g"><div class="stat-n">${met}</div><div class="stat-l">Met</div></div>
+      <div class="stat-card s-r"><div class="stat-n">${notMet}</div><div class="stat-l">Not Met</div></div>
+      <div class="stat-card s-a"><div class="stat-n">${unclear}</div><div class="stat-l">Unclear</div></div>
+      <div class="stat-card s-b"><div class="stat-n">${total}</div><div class="stat-l">Total</div></div>
+    </div>
+    <div class="crit-hdg">Eligibility Criteria</div>
+    ${cards}`;
+}
+
+function toggle(i){
+  const c=document.getElementById('cc'+i);
+  if(c&&c.querySelector('.crit-body'))c.classList.toggle('open');
+}
+
+/* ═══════════ RESET ═══════════ */
+function resetToSelection(){
+  _results.clear();
+  _activeTab=null;
+  _selPt=null;
+  _selDrugs.clear();
+  const ps=document.getElementById('pt-search');if(ps)ps.value='';
+  const px=document.getElementById('pt-sx');if(px)px.style.display='none';
+  const ds=document.getElementById('drug-search');if(ds)ds.value='';
+  const dx=document.getElementById('drug-sx');if(dx)dx.style.display='none';
+  renderPtList('');
+  renderDrugList('');
+  updateTopbarPt();
+  updateBtn();
+  showEmpty();
+}
+
+/* ═══════════ RECENT ═══════════ */
+function saveRecent(data){
+  _recent.unshift({pid:data.patient_id,pname:data.patient_name||data.patient_id,drug:data.drug,verdict:data.verdict,ts:Date.now(),data:data});
+  _recent=_recent.slice(0,6);
+  renderRecent();
+}
+function renderRecent(){
+  const r=_recent;
+  const el=document.getElementById('recent-list');
+  if(!r.length){el.innerHTML='<div class="r-empty">No evaluations yet</div>';return}
+  el.innerHTML=r.map((item,i)=>`
+    <div class="r-item" onclick="loadRecent(${i})">
+      <div class="r-dot ${verdictMeta(item.verdict).cls}"></div>
+      <div class="r-body">
+        <div class="r-pt">${esc(item.pname)}</div>
+        <div class="r-drug">${esc(item.drug)}</div>
+      </div>
+      <div class="r-time">${timeAgo(item.ts)}</div>
+      <button class="r-del" title="Delete this check" onclick="event.stopPropagation();deleteRecent(${i})">&times;</button>
+    </div>`).join('');
+}
+function deleteRecent(i){
+  _recent.splice(i,1);
+  renderRecent();
+}
+function loadRecent(i){
+  const item=_recent[i];
+  if(!item)return;
+  const pt=_pts.find(p=>p.id===item.pid);
+  if(pt){_selPt=pt;renderPtList(document.getElementById('pt-search').value.toLowerCase());updateTopbarPt()}
+  if(_drugs.includes(item.drug)){_selDrugs.clear();_selDrugs.add(item.drug);renderDrugList(document.getElementById('drug-search').value.toLowerCase())}
+  updateBtn();
+  // Show the cached result instantly (no re-run) if we stored it
+  if(pt&&item.data){
+    _results.clear();
+    _results.set(item.drug,item.data);
+    _activeTab=item.drug;
+    showResultsView([item.drug]);
+  }
+}
+
+/* ═══════════ BOOT ═══════════ */
+init();
+</script>
+</body>
+</html>

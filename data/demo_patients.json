@@ -1,0 +1,2177 @@
+{
+  "notice": "Entirely synthetic demonstration records. Never replace this file with identifiable patient information.",
+  "patients": [
+    {
+      "id": "DEMO-001",
+      "name": "Demo Patient 001",
+      "age": 56,
+      "city": "New Westminster",
+      "gender": "M",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-09-29",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 9 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 63.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-13",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "9 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 9 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-19",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "9 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 9 migraine days per month \u2014 episodic migraine (\u2265 8 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-002",
+      "name": "Demo Patient 002",
+      "age": 27,
+      "city": "Chilliwack",
+      "gender": "M",
+      "target_drug": "demo migraine preventive",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-09-06",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 2 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 62.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-07",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "2 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Amitriptyline 25 mg nightly initiated.",
+          "doctor_notes": "Neurologist assessment. 2 migraine days/month. Initiating amitriptyline as first-line prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-23",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "2 migraine days/month. On first preventive therapy.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Topiramate 75 mg BID (titrating); continue sumatriptan PRN.",
+          "doctor_notes": "Migraine review. 2 migraine days/month \u2014 below threshold for biologic therapy. Currently trialling first-line prophylaxis. Has not yet failed the required number of preventive therapies. Continue current preventive. Reassess in 3 months.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-003",
+      "name": "Demo Patient 003",
+      "age": 67,
+      "city": "Burnaby",
+      "gender": "M",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-07-24",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 4 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-11",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -3.4, hip -3.2. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -3.4.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -3.4 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-16",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -3.4. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -3.4 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-004",
+      "name": "Demo Patient 004",
+      "age": 22,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo inhaled therapy for copd",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-29",
+          "reason": "Chronic cough and shortness of breath.",
+          "symptoms": "Progressive exertional dyspnea over 8 months. Chronic productive cough. Smoking history 31 pack-years. SpO2 91% on room air. Expiratory wheeze on auscultation. Barrel chest.",
+          "diagnosis": "Chronic obstructive pulmonary disease (COPD); Dyspnea.",
+          "prescribed": "Spirometry ordered. Salbutamol puffer PRN.",
+          "doctor_notes": "Patient presents with symptoms consistent with COPD. Spirometry ordered with bronchodilator. Smoking cessation strongly encouraged. Pulmonology referral initiated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-27",
+          "reason": "Spirometry results review.",
+          "symptoms": "Cough persistent. Dyspnea on exertion. Post-bronchodilator FEV1/FVC ratio 0.79. SpO2 94%.",
+          "diagnosis": "COPD confirmed on spirometry; Airflow limitation.",
+          "prescribed": "Tiotropium (Spiriva) 18 mcg inhaled once daily initiated.",
+          "doctor_notes": "Post-bronchodilator spirometry confirms diagnosis of COPD. FEV1/FVC ratio 0.79 (borderline \u2014 monitoring). Initiating tiotropium (long-acting muscarinic antagonist, LAMA) as first-line therapy. Inhaler technique reviewed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-09",
+          "reason": "COPD \u2014 LAMA therapy review.",
+          "symptoms": "Dyspnea partially improved on tiotropium. FEV1/FVC 0.79. SpO2 94%.",
+          "diagnosis": "COPD; Limited response to bronchodilator therapy.",
+          "prescribed": "Tiotropium (Spiriva) 18 mcg daily (continue).",
+          "doctor_notes": "Patient on tiotropium since last visit. Reports partial improvement. FEV1/FVC 0.79. Has not yet completed trial of all regular benefit LAMA molecules. Will continue tiotropium for another month before considering alternative LAMA. Pulmonary rehabilitation referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-08-10",
+          "reason": "COPD management follow-up.",
+          "symptoms": "Dyspnea stable. Using inhalers as directed. No recent exacerbations.",
+          "diagnosis": "COPD; Stable.",
+          "prescribed": "Continue current inhaler regimen. Annual influenza vaccine.",
+          "doctor_notes": "Continuing LAMA optimization. Reassess at next visit.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-005",
+      "name": "Demo Patient 005",
+      "age": 37,
+      "city": "New Westminster",
+      "gender": "F",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-31",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 10. vIGA-AD score 2. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-27",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 10. vIGA-AD 2. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Continue topical therapy. Phototherapy referral.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 10 and vIGA-AD 2. Patient has failed maximally tolerated topical therapies for AD. Initiating phototherapy course. Will reassess systemic therapy need.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-29",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 10. vIGA-AD 2. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Cyclosporine 3 mg/kg/day initiated; continue topicals.",
+          "doctor_notes": "Atopic dermatitis management review. EASI 10 \u2014 below threshold of 16 for biologic therapy. vIGA-AD 2. Topical therapy ongoing. Has not yet completed trial of 2 systemic immunomodulators. Will continue current regimen and optimize topical therapy. Reassess for biologic eligibility if EASI worsens or systemic trials are exhausted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-07-07",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin partially improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "Optimizing systemic therapy. Monitor for adverse effects.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-006",
+      "name": "Demo Patient 006",
+      "age": 25,
+      "city": "Kelowna",
+      "gender": "M",
+      "target_drug": "demo asthma biologic",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-06-23",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 3 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 94%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-03",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 2.4. 3 exacerbations past 12 months. IgE 435 kIU/L. Blood eosinophils 773 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 2.4. IgE 435. Eosinophils 773. Positive perennial aeroallergen skin test. Eligible for biologic therapy assessment.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-20",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 2.4. 3 exacerbations/year. IgE 435. Eos 773.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Demo injection (SA requested by respirologist).",
+          "doctor_notes": "Biologic therapy assessment for severe allergic asthma. Patient 12 years or older. Symptoms inadequately controlled on high-dose ICS/LABA for minimum 6 months. ACQ-5 score 2.4 (above MCID threshold). 3 clinically significant asthma exacerbations in the past 12 months. Positive skin test to perennial aeroallergen (house dust mite). Baseline IgE 435 kIU/L and weight documented prior to initiation. Blood eosinophils 773 cells/\u00b5L. Special Authority request submitted by respirologist for omalizumab / mepolizumab. Baseline ACQ-5 documented for renewal comparison.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-007",
+      "name": "Demo Patient 007",
+      "age": 27,
+      "city": "Maple Ridge",
+      "gender": "M",
+      "target_drug": "demo migraine preventive",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-05-02",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 2 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 64.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-07-28",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "2 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Amitriptyline 25 mg nightly initiated.",
+          "doctor_notes": "Neurologist assessment. 2 migraine days/month. Initiating amitriptyline as first-line prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-24",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "2 migraine days/month. On first preventive therapy.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Topiramate 75 mg BID (titrating); continue sumatriptan PRN.",
+          "doctor_notes": "Migraine review. 2 migraine days/month \u2014 below threshold for biologic therapy. Currently trialling first-line prophylaxis. Has not yet failed the required number of preventive therapies. Continue current preventive. Reassess in 3 months.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-008",
+      "name": "Demo Patient 008",
+      "age": 38,
+      "city": "New Westminster",
+      "gender": "F",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-21",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 8 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 95 bpm. BP 106/80.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-17",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class II. LVEF 32% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with reduced ejection fraction; NYHA Class II.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 32% \u2014 reduced ejection fraction (HFrEF). Patient classified as NYHA Class II heart failure. BNP elevated at 425 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-18",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on minimal exertion. LVEF 32%. NYHA II.",
+          "diagnosis": "Chronic heart failure; Reduced ejection fraction.",
+          "prescribed": "Vericiguat 2.5 mg daily (SA requested); continue GDMT.",
+          "doctor_notes": "Patient 79 years of age with symptomatic chronic heart failure. LVEF 32% (reduced ejection fraction, < 45%). NYHA Class II symptoms. Recent course of IV diuretics in outpatient setting within the last 6 months. Currently on optimal standard of care therapy including ACE inhibitor (lisinopril), beta-blocker (carvedilol), and MRA (spironolactone). Vericiguat proposed as adjunct therapy. Patient is 18 years of age or older. Special Authority request submitted for vericiguat.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-11-03",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. SA approval received. Vericiguat initiated. Patient tolerating well.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-009",
+      "name": "Demo Patient 009",
+      "age": 76,
+      "city": "Surrey",
+      "gender": "M",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-02-05",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 36. vIGA-AD score 3. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-04-08",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 36. vIGA-AD 3. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Phototherapy referral; Methotrexate 10 mg weekly initiated.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 36 and vIGA-AD 3. Patient has failed maximally tolerated topical therapies for AD. Initiating methotrexate as systemic immunomodulator. Phototherapy course completed \u2014 inadequate benefit.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-07-22",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 36. vIGA-AD 3. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Demo (SA requested by dermatologist).",
+          "doctor_notes": "Patient assessed by dermatologist with expertise in management of moderate-to-severe atopic dermatitis. EASI score 36 (\u2265 16) and vIGA-AD score 3 (\u2265 3) documented. Patient has failed maximally tolerated medical topical therapies combined with phototherapy. Has also failed treatment with at least 2 of the 4 systemic immunomodulators: methotrexate (inadequate response after 3 months) and cyclosporine (discontinued due to renal side effects). Patient 12 years of age or older. Biologic therapy (dupilumab / abrocitinib) requested under Special Authority. Special Authority request submitted by dermatologist.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-17",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin significantly improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "SA approved. Biologic therapy initiated. EASI improving.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-010",
+      "name": "Demo Patient 010",
+      "age": 81,
+      "city": "Burnaby",
+      "gender": "F",
+      "target_drug": "demo arthritis therapy for rheumatoid arthritis",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-04-15",
+          "reason": "Joint pain and morning stiffness.",
+          "symptoms": "Bilateral symmetric polyarthritis. Morning stiffness > 1 hour. Tender joint count 3, swollen joint count 1. RF and anti-CCP positive. CRP 9 mg/L.",
+          "diagnosis": "Rheumatoid arthritis (RA); Active disease.",
+          "prescribed": "Naproxen 500 mg BID; Rheumatology referral.",
+          "doctor_notes": "Patient presents with symmetrical polyarthritis consistent with RA. Serology positive. Baseline DAS28 and imaging ordered. Rheumatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-08-18",
+          "reason": "Rheumatology \u2014 RA assessment.",
+          "symptoms": "DAS28 score 2.5. TJC 3, SJC 1. CRP 9 mg/L. RF positive. Anti-CCP positive.",
+          "diagnosis": "Rheumatoid arthritis, active disease.",
+          "prescribed": "Methotrexate 15 mg weekly; Folic acid 5 mg weekly.",
+          "doctor_notes": "Rheumatology assessment confirms active RA. DAS28 2.5. Initiating methotrexate as first conventional DMARD. Patient counselled on methotrexate side effects and monitoring requirements. Baseline LFTs, CBC ordered.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-02",
+          "reason": "RA \u2014 biologic therapy assessment.",
+          "symptoms": "DAS28 2.5. TJC 3, SJC 1. Low disease activity on current therapy.",
+          "diagnosis": "Rheumatoid arthritis; {'Active, DMARD failure' if qualifying else 'Low disease activity'}.",
+          "prescribed": "Methotrexate 20 mg weekly (increased); Hydroxychloroquine 200 mg BID added.",
+          "doctor_notes": "RA management review. DAS28 2.5 \u2014 low disease activity. Patient currently on methotrexate monotherapy. TJC 3, SJC 1. Has not yet failed two conventional DMARDs. Continue optimizing DMARD therapy before considering biologic. Hydroxychloroquine added for additional disease control.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-23",
+          "reason": "RA follow-up.",
+          "symptoms": "Joint symptoms stable on current regimen.",
+          "diagnosis": "Rheumatoid arthritis; {'Biologic therapy response' if qualifying else 'Stable on DMARD'}.",
+          "prescribed": "Continue therapy. DAS28 reassessment in 3 months.",
+          "doctor_notes": "DMARD combination ongoing. Reassess in 3 months.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-011",
+      "name": "Demo Patient 011",
+      "age": 26,
+      "city": "Coquitlam",
+      "gender": "M",
+      "target_drug": "demo bowel therapy for ulcerative colitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-04-20",
+          "reason": "Abdominal pain and diarrhea.",
+          "symptoms": "Crampy abdominal pain, 7 loose stools/day, rectal bleeding, fatigue. Weight loss 6 kg over 5 months. CRP 8 mg/L. Fecal calprotectin elevated.",
+          "diagnosis": "Ulcerative Colitis; Active disease.",
+          "prescribed": "Mesalamine 4 g daily; Gastroenterology referral urgently.",
+          "doctor_notes": "Patient with active ulcerative colitis. Colonoscopy ordered. Gastroenterology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-10-11",
+          "reason": "Gastroenterology assessment.",
+          "symptoms": "Colonoscopy confirms active ulcerative colitis. Harvey-Bradshaw Index (HBI) 3. CRP 8 mg/L. Calprotectin markedly elevated.",
+          "diagnosis": "Ulcerative Colitis, moderate-to-severe.",
+          "prescribed": "Prednisone 40 mg daily tapering; Azathioprine 2.5 mg/kg daily initiated.",
+          "doctor_notes": "Gastroenterology assessment. Ulcerative Colitis confirmed on colonoscopy \u2014 moderate-to-severe. HBI 3. Initiating corticosteroid induction and azathioprine maintenance.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-31",
+          "reason": "Ulcerative Colitis \u2014 biologic therapy assessment.",
+          "symptoms": "HBI 3. CRP 8 mg/L. Ongoing conventional therapy.",
+          "diagnosis": "Ulcerative Colitis; Moderate activity, optimizing treatment.",
+          "prescribed": "Azathioprine 2 mg/kg (continue); Methotrexate 20 mg SC weekly added.",
+          "doctor_notes": "IBD management review. HBI 3 \u2014 mild disease activity. Patient has only trialled azathioprine monotherapy to date. Has not yet failed two conventional therapies as required. Adding methotrexate. Reassess for biologic eligibility in 6 months.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-18",
+          "reason": "IBD follow-up.",
+          "symptoms": "GI symptoms stabilizing on current therapy.",
+          "diagnosis": "Ulcerative Colitis; Ongoing management.",
+          "prescribed": "Repeat colonoscopy in 6 months. Continue therapy.",
+          "doctor_notes": "Conventional therapy ongoing. Reassess for biologic eligibility.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-012",
+      "name": "Demo Patient 012",
+      "age": 81,
+      "city": "Nanaimo",
+      "gender": "F",
+      "target_drug": "demo asthma biologic",
+      "qualifies": true,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-02-23",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 3 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 95%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-05-13",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 2.7. 3 exacerbations past 12 months. IgE 501 kIU/L. Blood eosinophils 508 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 2.7. IgE 501. Eosinophils 508. Positive perennial aeroallergen skin test. Eligible for biologic therapy assessment.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-02",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 2.7. 3 exacerbations/year. IgE 501. Eos 508.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Demo injection (SA requested by respirologist).",
+          "doctor_notes": "Biologic therapy assessment for severe allergic asthma. Patient 12 years or older. Symptoms inadequately controlled on high-dose ICS/LABA for minimum 6 months. ACQ-5 score 2.7 (above MCID threshold). 3 clinically significant asthma exacerbations in the past 12 months. Positive skin test to perennial aeroallergen (house dust mite). Baseline IgE 501 kIU/L and weight documented prior to initiation. Blood eosinophils 508 cells/\u00b5L. Special Authority request submitted by respirologist for omalizumab / mepolizumab. Baseline ACQ-5 documented for renewal comparison.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-013",
+      "name": "Demo Patient 013",
+      "age": 27,
+      "city": "Victoria",
+      "gender": "M",
+      "target_drug": "demo arthritis therapy for rheumatoid arthritis",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-05",
+          "reason": "Joint pain and morning stiffness.",
+          "symptoms": "Bilateral symmetric polyarthritis. Morning stiffness > 1 hour. Tender joint count 10, swollen joint count 6. RF and anti-CCP positive. CRP 65 mg/L.",
+          "diagnosis": "Rheumatoid arthritis (RA); Active disease.",
+          "prescribed": "Naproxen 500 mg BID; Rheumatology referral.",
+          "doctor_notes": "Patient presents with symmetrical polyarthritis consistent with RA. Serology positive. Baseline DAS28 and imaging ordered. Rheumatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-28",
+          "reason": "Rheumatology \u2014 RA assessment.",
+          "symptoms": "DAS28 score 5.2. TJC 10, SJC 6. CRP 65 mg/L. RF positive. Anti-CCP positive.",
+          "diagnosis": "Rheumatoid arthritis, active disease.",
+          "prescribed": "Methotrexate 15 mg weekly; Folic acid 5 mg weekly.",
+          "doctor_notes": "Rheumatology assessment confirms active RA. DAS28 5.2. Initiating methotrexate as first conventional DMARD. Patient counselled on methotrexate side effects and monitoring requirements. Baseline LFTs, CBC ordered.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-23",
+          "reason": "RA \u2014 biologic therapy assessment.",
+          "symptoms": "DAS28 5.2. TJC 10, SJC 6. Inadequate DMARD response.",
+          "diagnosis": "Rheumatoid arthritis; {'Active, DMARD failure' if qualifying else 'Low disease activity'}.",
+          "prescribed": "Demo (SA requested by rheumatologist).",
+          "doctor_notes": "Patient with active rheumatoid arthritis assessed by rheumatologist. DAS28 score 5.2 (\u2265 3.2 \u2014 moderate-to-severe disease activity). Tender joint count 10, swollen joint count 6. CRP 65 mg/L. Patient has failed an adequate trial of methotrexate (15 mg weekly x 6 months \u2014 inadequate DAS28 response) and leflunomide (20 mg daily x 4 months \u2014 GI intolerance requiring discontinuation). Has trialled 2 conventional DMARDs including methotrexate as required. Biologic DMARD (targeted therapy) indicated. Request submitted by rheumatologist for demo arthritis therapy for rheumatoid arthritis. Baseline TB test, hepatitis B/C serology, chest X-ray completed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-08",
+          "reason": "RA follow-up.",
+          "symptoms": "Joint symptoms significantly improved.",
+          "diagnosis": "Rheumatoid arthritis; {'Biologic therapy response' if qualifying else 'Stable on DMARD'}.",
+          "prescribed": "Continue therapy. DAS28 reassessment in 3 months.",
+          "doctor_notes": "SA approved. Biologic therapy initiated. DAS28 improving toward remission.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-014",
+      "name": "Demo Patient 014",
+      "age": 26,
+      "city": "Courtenay",
+      "gender": "M",
+      "target_drug": "demo inhaled therapy for copd",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-20",
+          "reason": "Chronic cough and shortness of breath.",
+          "symptoms": "Progressive exertional dyspnea over 7 months. Chronic productive cough. Smoking history 24 pack-years. SpO2 92% on room air. Expiratory wheeze on auscultation. Barrel chest.",
+          "diagnosis": "Chronic obstructive pulmonary disease (COPD); Dyspnea.",
+          "prescribed": "Spirometry ordered. Salbutamol puffer PRN.",
+          "doctor_notes": "Patient presents with symptoms consistent with COPD. Spirometry ordered with bronchodilator. Smoking cessation strongly encouraged. Pulmonology referral initiated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-12",
+          "reason": "Spirometry results review.",
+          "symptoms": "Cough persistent. Dyspnea on exertion. Post-bronchodilator FEV1/FVC ratio 0.58. SpO2 93%.",
+          "diagnosis": "COPD confirmed on spirometry; Airflow limitation.",
+          "prescribed": "Tiotropium (Spiriva) 18 mcg inhaled once daily initiated.",
+          "doctor_notes": "Post-bronchodilator spirometry confirms diagnosis of COPD. FEV1/FVC ratio 0.58 (< 0.70 \u2014 diagnostic for COPD). Initiating tiotropium (long-acting muscarinic antagonist, LAMA) as first-line therapy. Inhaler technique reviewed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-05",
+          "reason": "COPD \u2014 LAMA therapy review.",
+          "symptoms": "Dyspnea persists despite LAMA therapy. FEV1/FVC 0.58. SpO2 95%.",
+          "diagnosis": "COPD; Limited response to bronchodilator therapy.",
+          "prescribed": "Demo inhaler (SA requested).",
+          "doctor_notes": "Patient with confirmed diagnosis of COPD. Post-bronchodilator FEV1/FVC 0.58 (< 0.70). Completed minimum one-month trial of tiotropium inhalers (LAMA) \u2014 inadequate symptom control, patient reports continued dyspnea and exercise intolerance. Also trialled umeclidinium (Incruse Ellipta) for one month \u2014 similarly inadequate response. Has failed both regular benefit LAMA molecules: tiotropium inhalation solution and umeclidinium dry powder inhaler. Aclidinium (Tudorza Genuair) requested under Special Authority as per criteria. Special Authority request submitted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-09-21",
+          "reason": "COPD management follow-up.",
+          "symptoms": "Dyspnea stable. Using inhalers as directed. No recent exacerbations.",
+          "diagnosis": "COPD; Stable.",
+          "prescribed": "Continue current inhaler regimen. Annual influenza vaccine.",
+          "doctor_notes": "SA approved. Aclidinium initiated. Patient reports improved symptom control.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-015",
+      "name": "Demo Patient 015",
+      "age": 61,
+      "city": "Chilliwack",
+      "gender": "F",
+      "target_drug": "demo inhaled therapy for copd",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-03-21",
+          "reason": "Chronic cough and shortness of breath.",
+          "symptoms": "Progressive exertional dyspnea over 16 months. Chronic productive cough. Smoking history 40 pack-years. SpO2 93% on room air. Expiratory wheeze on auscultation. Barrel chest.",
+          "diagnosis": "Chronic obstructive pulmonary disease (COPD); Dyspnea.",
+          "prescribed": "Spirometry ordered. Salbutamol puffer PRN.",
+          "doctor_notes": "Patient presents with symptoms consistent with COPD. Spirometry ordered with bronchodilator. Smoking cessation strongly encouraged. Pulmonology referral initiated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-07-04",
+          "reason": "Spirometry results review.",
+          "symptoms": "Cough persistent. Dyspnea on exertion. Post-bronchodilator FEV1/FVC ratio 0.52. SpO2 92%.",
+          "diagnosis": "COPD confirmed on spirometry; Airflow limitation.",
+          "prescribed": "Tiotropium (Spiriva) 18 mcg inhaled once daily initiated.",
+          "doctor_notes": "Post-bronchodilator spirometry confirms diagnosis of COPD. FEV1/FVC ratio 0.52 (< 0.70 \u2014 diagnostic for COPD). Initiating tiotropium (long-acting muscarinic antagonist, LAMA) as first-line therapy. Inhaler technique reviewed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-28",
+          "reason": "COPD \u2014 LAMA therapy review.",
+          "symptoms": "Dyspnea persists despite LAMA therapy. FEV1/FVC 0.52. SpO2 91%.",
+          "diagnosis": "COPD; Limited response to bronchodilator therapy.",
+          "prescribed": "Demo inhaler (SA requested).",
+          "doctor_notes": "Patient with confirmed diagnosis of COPD. Post-bronchodilator FEV1/FVC 0.52 (< 0.70). Completed minimum one-month trial of tiotropium inhalers (LAMA) \u2014 inadequate symptom control, patient reports continued dyspnea and exercise intolerance. Also trialled umeclidinium (Incruse Ellipta) for one month \u2014 similarly inadequate response. Has failed both regular benefit LAMA molecules: tiotropium inhalation solution and umeclidinium dry powder inhaler. Aclidinium (Tudorza Genuair) requested under Special Authority as per criteria. Special Authority request submitted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-27",
+          "reason": "COPD management follow-up.",
+          "symptoms": "Dyspnea stable. Using inhalers as directed. No recent exacerbations.",
+          "diagnosis": "COPD; Stable.",
+          "prescribed": "Continue current inhaler regimen. Annual influenza vaccine.",
+          "doctor_notes": "SA approved. Aclidinium initiated. Patient reports improved symptom control.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-016",
+      "name": "Demo Patient 016",
+      "age": 76,
+      "city": "Abbotsford",
+      "gender": "M",
+      "target_drug": "demo bowel therapy for ulcerative colitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-04-24",
+          "reason": "Abdominal pain and diarrhea.",
+          "symptoms": "Crampy abdominal pain, 11 loose stools/day, rectal bleeding, fatigue. Weight loss 5 kg over 5 months. CRP 3 mg/L. Fecal calprotectin elevated.",
+          "diagnosis": "Crohn'S Disease; Active disease.",
+          "prescribed": "Mesalamine 4 g daily; Gastroenterology referral urgently.",
+          "doctor_notes": "Patient with active Crohn's disease. Colonoscopy ordered. Gastroenterology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-07-29",
+          "reason": "Gastroenterology assessment.",
+          "symptoms": "Colonoscopy confirms active Crohn's disease. Harvey-Bradshaw Index (HBI) 3. CRP 3 mg/L. Calprotectin markedly elevated.",
+          "diagnosis": "Crohn'S Disease, moderate-to-severe.",
+          "prescribed": "Prednisone 40 mg daily tapering; Azathioprine 2.5 mg/kg daily initiated.",
+          "doctor_notes": "Gastroenterology assessment. Crohn'S Disease confirmed on colonoscopy \u2014 moderate-to-severe. HBI 3. Initiating corticosteroid induction and azathioprine maintenance.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-07",
+          "reason": "Crohn'S Disease \u2014 biologic therapy assessment.",
+          "symptoms": "HBI 3. CRP 3 mg/L. Ongoing conventional therapy.",
+          "diagnosis": "Crohn'S Disease; Moderate activity, optimizing treatment.",
+          "prescribed": "Azathioprine 2 mg/kg (continue); Methotrexate 20 mg SC weekly added.",
+          "doctor_notes": "IBD management review. HBI 3 \u2014 mild disease activity. Patient has only trialled azathioprine monotherapy to date. Has not yet failed two conventional therapies as required. Adding methotrexate. Reassess for biologic eligibility in 6 months.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-20",
+          "reason": "IBD follow-up.",
+          "symptoms": "GI symptoms stabilizing on current therapy.",
+          "diagnosis": "Crohn'S Disease; Ongoing management.",
+          "prescribed": "Repeat colonoscopy in 6 months. Continue therapy.",
+          "doctor_notes": "Conventional therapy ongoing. Reassess for biologic eligibility.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-017",
+      "name": "Demo Patient 017",
+      "age": 82,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-03-01",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 10 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 88 bpm. BP 118/89.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-06-20",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class III. LVEF 37% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with reduced ejection fraction; NYHA Class III.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 37% \u2014 reduced ejection fraction (HFrEF). Patient classified as NYHA Class III heart failure. BNP elevated at 459 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily). Patient required hospitalization for IV diuresis 5 months ago. Currently on optimal GDMT as adjunct therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-18",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on minimal exertion. LVEF 37%. NYHA III.",
+          "diagnosis": "Chronic heart failure; Reduced ejection fraction.",
+          "prescribed": "Vericiguat 2.5 mg daily (SA requested); continue GDMT.",
+          "doctor_notes": "Patient 42 years of age with symptomatic chronic heart failure. LVEF 37% (reduced ejection fraction, < 45%). NYHA Class III symptoms. Recent hospitalization for HF decompensation requiring IV diuretic therapy within the past 6 months. Currently on optimal standard of care therapy including ACE inhibitor (lisinopril), beta-blocker (carvedilol), and MRA (spironolactone). Vericiguat proposed as adjunct therapy. Patient is 18 years of age or older. Special Authority request submitted for vericiguat.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-08",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. SA approval received. Vericiguat initiated. Patient tolerating well.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-018",
+      "name": "Demo Patient 018",
+      "age": 55,
+      "city": "North Vancouver",
+      "gender": "M",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-03",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 12. vIGA-AD score 2. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-06",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 12. vIGA-AD 2. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Continue topical therapy. Phototherapy referral.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 12 and vIGA-AD 2. Patient has failed maximally tolerated topical therapies for AD. Initiating phototherapy course. Will reassess systemic therapy need.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-23",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 12. vIGA-AD 2. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Cyclosporine 3 mg/kg/day initiated; continue topicals.",
+          "doctor_notes": "Atopic dermatitis management review. EASI 12 \u2014 below threshold of 16 for biologic therapy. vIGA-AD 2. Topical therapy ongoing. Has not yet completed trial of 2 systemic immunomodulators. Will continue current regimen and optimize topical therapy. Reassess for biologic eligibility if EASI worsens or systemic trials are exhausted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-10-25",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin partially improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "Optimizing systemic therapy. Monitor for adverse effects.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-019",
+      "name": "Demo Patient 019",
+      "age": 42,
+      "city": "Kelowna",
+      "gender": "F",
+      "target_drug": "demo inhaled therapy for copd",
+      "qualifies": true,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-23",
+          "reason": "Chronic cough and shortness of breath.",
+          "symptoms": "Progressive exertional dyspnea over 18 months. Chronic productive cough. Smoking history 36 pack-years. SpO2 95% on room air. Expiratory wheeze on auscultation. Barrel chest.",
+          "diagnosis": "Chronic obstructive pulmonary disease (COPD); Dyspnea.",
+          "prescribed": "Spirometry ordered. Salbutamol puffer PRN.",
+          "doctor_notes": "Patient presents with symptoms consistent with COPD. Spirometry ordered with bronchodilator. Smoking cessation strongly encouraged. Pulmonology referral initiated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-21",
+          "reason": "Spirometry results review.",
+          "symptoms": "Cough persistent. Dyspnea on exertion. Post-bronchodilator FEV1/FVC ratio 0.62. SpO2 95%.",
+          "diagnosis": "COPD confirmed on spirometry; Airflow limitation.",
+          "prescribed": "Tiotropium (Spiriva) 18 mcg inhaled once daily initiated.",
+          "doctor_notes": "Post-bronchodilator spirometry confirms diagnosis of COPD. FEV1/FVC ratio 0.62 (< 0.70 \u2014 diagnostic for COPD). Initiating tiotropium (long-acting muscarinic antagonist, LAMA) as first-line therapy. Inhaler technique reviewed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-07-07",
+          "reason": "COPD \u2014 LAMA therapy review.",
+          "symptoms": "Dyspnea persists despite LAMA therapy. FEV1/FVC 0.62. SpO2 92%.",
+          "diagnosis": "COPD; Limited response to bronchodilator therapy.",
+          "prescribed": "Demo inhaler (SA requested).",
+          "doctor_notes": "Patient with confirmed diagnosis of COPD. Post-bronchodilator FEV1/FVC 0.62 (< 0.70). Completed minimum one-month trial of tiotropium inhalers (LAMA) \u2014 inadequate symptom control, patient reports continued dyspnea and exercise intolerance. Also trialled umeclidinium (Incruse Ellipta) for one month \u2014 similarly inadequate response. Has failed both regular benefit LAMA molecules: tiotropium inhalation solution and umeclidinium dry powder inhaler. Aclidinium (Tudorza Genuair) requested under Special Authority as per criteria. Special Authority request submitted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-10-09",
+          "reason": "COPD management follow-up.",
+          "symptoms": "Dyspnea stable. Using inhalers as directed. No recent exacerbations.",
+          "diagnosis": "COPD; Stable.",
+          "prescribed": "Continue current inhaler regimen. Annual influenza vaccine.",
+          "doctor_notes": "SA approved. Aclidinium initiated. Patient reports improved symptom control.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-020",
+      "name": "Demo Patient 020",
+      "age": 40,
+      "city": "Surrey",
+      "gender": "F",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-09",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 12. vIGA-AD score 2. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-14",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 12. vIGA-AD 2. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Continue topical therapy. Phototherapy referral.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 12 and vIGA-AD 2. Patient has failed maximally tolerated topical therapies for AD. Initiating phototherapy course. Will reassess systemic therapy need.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-26",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 12. vIGA-AD 2. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Cyclosporine 3 mg/kg/day initiated; continue topicals.",
+          "doctor_notes": "Atopic dermatitis management review. EASI 12 \u2014 below threshold of 16 for biologic therapy. vIGA-AD 2. Topical therapy ongoing. Has not yet completed trial of 2 systemic immunomodulators. Will continue current regimen and optimize topical therapy. Reassess for biologic eligibility if EASI worsens or systemic trials are exhausted.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-10-31",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin partially improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "Optimizing systemic therapy. Monitor for adverse effects.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-021",
+      "name": "Demo Patient 021",
+      "age": 27,
+      "city": "North Vancouver",
+      "gender": "F",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-05-01",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 19. vIGA-AD score 3. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-02",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 19. vIGA-AD 3. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Phototherapy referral; Methotrexate 10 mg weekly initiated.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 19 and vIGA-AD 3. Patient has failed maximally tolerated topical therapies for AD. Initiating methotrexate as systemic immunomodulator. Phototherapy course completed \u2014 inadequate benefit.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-13",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 19. vIGA-AD 3. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Demo (SA requested by dermatologist).",
+          "doctor_notes": "Patient assessed by dermatologist with expertise in management of moderate-to-severe atopic dermatitis. EASI score 19 (\u2265 16) and vIGA-AD score 3 (\u2265 3) documented. Patient has failed maximally tolerated medical topical therapies combined with phototherapy. Has also failed treatment with at least 2 of the 4 systemic immunomodulators: methotrexate (inadequate response after 3 months) and cyclosporine (discontinued due to renal side effects). Patient 12 years of age or older. Biologic therapy (dupilumab / abrocitinib) requested under Special Authority. Special Authority request submitted by dermatologist.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-17",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin significantly improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "SA approved. Biologic therapy initiated. EASI improving.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-022",
+      "name": "Demo Patient 022",
+      "age": 67,
+      "city": "Kamloops",
+      "gender": "M",
+      "target_drug": "demo asthma biologic",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-07-16",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 0 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 94%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-03",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 1.4. 0 exacerbations past 12 months. IgE 84 kIU/L. Blood eosinophils 78 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 1.4. IgE 84. Eosinophils 78. Controlled \u2014 biologic not indicated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-29",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 1.4. 0 exacerbations/year. IgE 84. Eos 78.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Fluticasone/salmeterol 500/50 BID; Tiotropium 18 mcg daily.",
+          "doctor_notes": "Asthma review. ACQ-5 1.4 \u2014 well-controlled. 0 exacerbation in past year. IgE 84. Does not meet threshold for biologic therapy. Continue optimizing ICS/LABA. Add tiotropium. Reassess if control deteriorates.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-023",
+      "name": "Demo Patient 023",
+      "age": 80,
+      "city": "Penticton",
+      "gender": "M",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-03-04",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 10 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 95 bpm. BP 119/75.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-08-12",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class II. LVEF 50% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with preserved ejection fraction; NYHA Class II.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 50% \u2014 preserved ejection fraction (HFpEF). Patient classified as NYHA Class II heart failure. BNP elevated at 841 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-10-30",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on moderate exertion. LVEF 50%. NYHA II.",
+          "diagnosis": "Chronic heart failure; Preserved ejection fraction.",
+          "prescribed": "Lisinopril 20 mg daily (increased); Carvedilol 12.5 mg BID (increased).",
+          "doctor_notes": "Patient with heart failure. LVEF 50% on echocardiogram \u2014 preserved ejection fraction. NYHA Class II symptoms. No hospitalizations in the past 6 months. Currently optimizing GDMT. Will reassess for advanced therapy options at next visit. Does not currently meet criteria for vericiguat (LVEF not < 45%).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-10",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. Optimizing GDMT. Repeat echo ordered to reassess LVEF.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-024",
+      "name": "Demo Patient 024",
+      "age": 71,
+      "city": "New Westminster",
+      "gender": "F",
+      "target_drug": "demo arthritis therapy for rheumatoid arthritis",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-09-24",
+          "reason": "Joint pain and morning stiffness.",
+          "symptoms": "Bilateral symmetric polyarthritis. Morning stiffness > 1 hour. Tender joint count 9, swollen joint count 8. RF and anti-CCP positive. CRP 39 mg/L.",
+          "diagnosis": "Rheumatoid arthritis (RA); Active disease.",
+          "prescribed": "Naproxen 500 mg BID; Rheumatology referral.",
+          "doctor_notes": "Patient presents with symmetrical polyarthritis consistent with RA. Serology positive. Baseline DAS28 and imaging ordered. Rheumatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-11",
+          "reason": "Rheumatology \u2014 RA assessment.",
+          "symptoms": "DAS28 score 5.4. TJC 9, SJC 8. CRP 39 mg/L. RF positive. Anti-CCP positive.",
+          "diagnosis": "Rheumatoid arthritis, active disease.",
+          "prescribed": "Methotrexate 15 mg weekly; Folic acid 5 mg weekly.",
+          "doctor_notes": "Rheumatology assessment confirms active RA. DAS28 5.4. Initiating methotrexate as first conventional DMARD. Patient counselled on methotrexate side effects and monitoring requirements. Baseline LFTs, CBC ordered.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-25",
+          "reason": "RA \u2014 biologic therapy assessment.",
+          "symptoms": "DAS28 5.4. TJC 9, SJC 8. Inadequate DMARD response.",
+          "diagnosis": "Rheumatoid arthritis; {'Active, DMARD failure' if qualifying else 'Low disease activity'}.",
+          "prescribed": "Demo (SA requested by rheumatologist).",
+          "doctor_notes": "Patient with active rheumatoid arthritis assessed by rheumatologist. DAS28 score 5.4 (\u2265 3.2 \u2014 moderate-to-severe disease activity). Tender joint count 9, swollen joint count 8. CRP 39 mg/L. Patient has failed an adequate trial of methotrexate (15 mg weekly x 6 months \u2014 inadequate DAS28 response) and leflunomide (20 mg daily x 4 months \u2014 GI intolerance requiring discontinuation). Has trialled 2 conventional DMARDs including methotrexate as required. Biologic DMARD (targeted therapy) indicated. Request submitted by rheumatologist for demo arthritis therapy for rheumatoid arthritis. Baseline TB test, hepatitis B/C serology, chest X-ray completed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-10-18",
+          "reason": "RA follow-up.",
+          "symptoms": "Joint symptoms significantly improved.",
+          "diagnosis": "Rheumatoid arthritis; {'Biologic therapy response' if qualifying else 'Stable on DMARD'}.",
+          "prescribed": "Continue therapy. DAS28 reassessment in 3 months.",
+          "doctor_notes": "SA approved. Biologic therapy initiated. DAS28 improving toward remission.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-025",
+      "name": "Demo Patient 025",
+      "age": 66,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo asthma biologic",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-28",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 1 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 96%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-05",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 1.0. 1 exacerbations past 12 months. IgE 37 kIU/L. Blood eosinophils 76 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 1.0. IgE 37. Eosinophils 76. Controlled \u2014 biologic not indicated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-05",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 1.0. 1 exacerbations/year. IgE 37. Eos 76.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Fluticasone/salmeterol 500/50 BID; Tiotropium 18 mcg daily.",
+          "doctor_notes": "Asthma review. ACQ-5 1.0 \u2014 well-controlled. 1 exacerbation in past year. IgE 37. Does not meet threshold for biologic therapy. Continue optimizing ICS/LABA. Add tiotropium. Reassess if control deteriorates.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-026",
+      "name": "Demo Patient 026",
+      "age": 52,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo iron therapy for iron deficiency anemia",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-06-30",
+          "reason": "Fatigue and shortness of breath.",
+          "symptoms": "Patient reports progressive fatigue for 6 weeks, exertional dyspnea, pallor. HR 94 bpm. BP 115/77. Conjunctival pallor noted.",
+          "diagnosis": "Iron deficiency anemia (IDA); Fatigue.",
+          "prescribed": "CBC, iron studies, ferritin ordered.",
+          "doctor_notes": "Patient presents with symptomatic anemia. Lab work ordered to confirm IDA and assess severity. Dietary review discussed. Patient instructed to avoid NSAIDs.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-10-29",
+          "reason": "Lab review \u2014 confirmed IDA.",
+          "symptoms": "Fatigue persists. Hemoglobin 110 g/L. Ferritin 29 \u00b5g/L. TSAT 22%. Pallor unchanged.",
+          "diagnosis": "Iron deficiency anemia, confirmed by laboratory testing.",
+          "prescribed": "Monitoring; patient declines oral iron.",
+          "doctor_notes": "Lab results confirm iron deficiency anemia. Hemoglobin 110 g/L (low). Ferritin 29 \u00b5g/L (low). Transferrin saturation (TSAT) 22% (low). Patient declines oral iron therapy. Reviewing alternative management options.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-21",
+          "reason": "IDA treatment review.",
+          "symptoms": "Fatigue slightly improved. GI side effects mild. Pallor resolving.",
+          "diagnosis": "Iron deficiency anemia; Oral iron {'intolerance' if qualifying else 'trial ongoing'}.",
+          "prescribed": "Ferrous sulfate 300 mg TID (continue).",
+          "doctor_notes": "Patient reports mild GI symptoms with oral iron but has not completed a minimum 4-week trial. Hemoglobin 122 g/L. Ferritin 29 \u00b5g/L. TSAT 22%. Discussed importance of completing oral iron trial before escalating to IV therapy. Continuing current regimen. Reassess in 4 weeks.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-08-20",
+          "reason": "Follow-up \u2014 IV iron therapy.",
+          "symptoms": "Patient on continued oral iron; improving slowly.",
+          "diagnosis": "Iron deficiency anemia.",
+          "prescribed": "Repeat CBC and iron studies in 4 weeks.",
+          "doctor_notes": "Oral iron ongoing. Hemoglobin trending up. Will reassess IV iron need at next visit.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-027",
+      "name": "Demo Patient 027",
+      "age": 59,
+      "city": "Langley",
+      "gender": "F",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-06",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 6 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 90 bpm. BP 115/76.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-26",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class I. LVEF 45% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with preserved ejection fraction; NYHA Class I.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 45% \u2014 preserved ejection fraction (HFpEF). Patient classified as NYHA Class I heart failure. BNP elevated at 567 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-01",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on moderate exertion. LVEF 45%. NYHA I.",
+          "diagnosis": "Chronic heart failure; Preserved ejection fraction.",
+          "prescribed": "Lisinopril 20 mg daily (increased); Carvedilol 12.5 mg BID (increased).",
+          "doctor_notes": "Patient with heart failure. LVEF 45% on echocardiogram \u2014 preserved ejection fraction. NYHA Class I symptoms. No hospitalizations in the past 6 months. Currently optimizing GDMT. Will reassess for advanced therapy options at next visit. Does not currently meet criteria for vericiguat (LVEF not < 45%).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-09-02",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. Optimizing GDMT. Repeat echo ordered to reassess LVEF.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-028",
+      "name": "Demo Patient 028",
+      "age": 38,
+      "city": "West Vancouver",
+      "gender": "F",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-02-11",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 10 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 78 bpm. BP 135/77.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-07-26",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class I. LVEF 44% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with reduced ejection fraction; NYHA Class I.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 44% \u2014 reduced ejection fraction (HFrEF). Patient classified as NYHA Class I heart failure. BNP elevated at 829 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-09-13",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on moderate exertion. LVEF 44%. NYHA I.",
+          "diagnosis": "Chronic heart failure; Preserved ejection fraction.",
+          "prescribed": "Lisinopril 20 mg daily (increased); Carvedilol 12.5 mg BID (increased).",
+          "doctor_notes": "Patient with heart failure. LVEF 44% on echocardiogram \u2014 preserved ejection fraction. NYHA Class I symptoms. No hospitalizations in the past 6 months. Currently optimizing GDMT. Will reassess for advanced therapy options at next visit. Does not currently meet criteria for vericiguat (LVEF not < 45%).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-10",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. Optimizing GDMT. Repeat echo ordered to reassess LVEF.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-029",
+      "name": "Demo Patient 029",
+      "age": 64,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-16",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 10 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 67.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-24",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "10 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 10 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-07-06",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "10 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 10 migraine days per month \u2014 episodic migraine (\u2265 8 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-030",
+      "name": "Demo Patient 030",
+      "age": 41,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-24",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 19 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 61.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-14",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "19 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 19 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-16",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "19 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 19 migraine days per month \u2014 chronic migraine (\u2265 15 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-031",
+      "name": "Demo Patient 031",
+      "age": 28,
+      "city": "Kamloops",
+      "gender": "M",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-06-04",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 4 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-08-18",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -2.9, hip -2.7. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -2.9.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -2.9 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-10-12",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -2.9. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -2.9 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-032",
+      "name": "Demo Patient 032",
+      "age": 62,
+      "city": "West Vancouver",
+      "gender": "F",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-24",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 5 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-16",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -2.6, hip -2.4. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -2.6.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -2.6 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-20",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -2.6. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -2.6 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-033",
+      "name": "Demo Patient 033",
+      "age": 76,
+      "city": "Surrey",
+      "gender": "F",
+      "target_drug": "demo bowel therapy for ulcerative colitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-02-14",
+          "reason": "Abdominal pain and diarrhea.",
+          "symptoms": "Crampy abdominal pain, 10 loose stools/day, rectal bleeding, fatigue. Weight loss 4 kg over 6 months. CRP 3 mg/L. Fecal calprotectin elevated.",
+          "diagnosis": "Ulcerative Colitis; Active disease.",
+          "prescribed": "Mesalamine 4 g daily; Gastroenterology referral urgently.",
+          "doctor_notes": "Patient with active ulcerative colitis. Colonoscopy ordered. Gastroenterology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-06-10",
+          "reason": "Gastroenterology assessment.",
+          "symptoms": "Colonoscopy confirms active ulcerative colitis. Harvey-Bradshaw Index (HBI) 4. CRP 3 mg/L. Calprotectin markedly elevated.",
+          "diagnosis": "Ulcerative Colitis, moderate-to-severe.",
+          "prescribed": "Prednisone 40 mg daily tapering; Azathioprine 2.5 mg/kg daily initiated.",
+          "doctor_notes": "Gastroenterology assessment. Ulcerative Colitis confirmed on colonoscopy \u2014 moderate-to-severe. HBI 4. Initiating corticosteroid induction and azathioprine maintenance.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-17",
+          "reason": "Ulcerative Colitis \u2014 biologic therapy assessment.",
+          "symptoms": "HBI 4. CRP 3 mg/L. Ongoing conventional therapy.",
+          "diagnosis": "Ulcerative Colitis; Moderate activity, optimizing treatment.",
+          "prescribed": "Azathioprine 2 mg/kg (continue); Methotrexate 20 mg SC weekly added.",
+          "doctor_notes": "IBD management review. HBI 4 \u2014 mild disease activity. Patient has only trialled azathioprine monotherapy to date. Has not yet failed two conventional therapies as required. Adding methotrexate. Reassess for biologic eligibility in 6 months.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-03",
+          "reason": "IBD follow-up.",
+          "symptoms": "GI symptoms stabilizing on current therapy.",
+          "diagnosis": "Ulcerative Colitis; Ongoing management.",
+          "prescribed": "Repeat colonoscopy in 6 months. Continue therapy.",
+          "doctor_notes": "Conventional therapy ongoing. Reassess for biologic eligibility.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-034",
+      "name": "Demo Patient 034",
+      "age": 57,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo arthritis therapy for rheumatoid arthritis",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-09-22",
+          "reason": "Joint pain and morning stiffness.",
+          "symptoms": "Bilateral symmetric polyarthritis. Morning stiffness > 1 hour. Tender joint count 2, swollen joint count 2. RF and anti-CCP positive. CRP 11 mg/L.",
+          "diagnosis": "Rheumatoid arthritis (RA); Active disease.",
+          "prescribed": "Naproxen 500 mg BID; Rheumatology referral.",
+          "doctor_notes": "Patient presents with symmetrical polyarthritis consistent with RA. Serology positive. Baseline DAS28 and imaging ordered. Rheumatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-24",
+          "reason": "Rheumatology \u2014 RA assessment.",
+          "symptoms": "DAS28 score 2.4. TJC 2, SJC 2. CRP 11 mg/L. RF positive. Anti-CCP positive.",
+          "diagnosis": "Rheumatoid arthritis, active disease.",
+          "prescribed": "Methotrexate 15 mg weekly; Folic acid 5 mg weekly.",
+          "doctor_notes": "Rheumatology assessment confirms active RA. DAS28 2.4. Initiating methotrexate as first conventional DMARD. Patient counselled on methotrexate side effects and monitoring requirements. Baseline LFTs, CBC ordered.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-28",
+          "reason": "RA \u2014 biologic therapy assessment.",
+          "symptoms": "DAS28 2.4. TJC 2, SJC 2. Low disease activity on current therapy.",
+          "diagnosis": "Rheumatoid arthritis; {'Active, DMARD failure' if qualifying else 'Low disease activity'}.",
+          "prescribed": "Methotrexate 20 mg weekly (increased); Hydroxychloroquine 200 mg BID added.",
+          "doctor_notes": "RA management review. DAS28 2.4 \u2014 low disease activity. Patient currently on methotrexate monotherapy. TJC 2, SJC 2. Has not yet failed two conventional DMARDs. Continue optimizing DMARD therapy before considering biologic. Hydroxychloroquine added for additional disease control.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-13",
+          "reason": "RA follow-up.",
+          "symptoms": "Joint symptoms stable on current regimen.",
+          "diagnosis": "Rheumatoid arthritis; {'Biologic therapy response' if qualifying else 'Stable on DMARD'}.",
+          "prescribed": "Continue therapy. DAS28 reassessment in 3 months.",
+          "doctor_notes": "DMARD combination ongoing. Reassess in 3 months.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-035",
+      "name": "Demo Patient 035",
+      "age": 40,
+      "city": "Surrey",
+      "gender": "M",
+      "target_drug": "demo bowel therapy for ulcerative colitis",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-07-27",
+          "reason": "Abdominal pain and diarrhea.",
+          "symptoms": "Crampy abdominal pain, 10 loose stools/day, rectal bleeding, fatigue. Weight loss 8 kg over 6 months. CRP 9 mg/L. Fecal calprotectin elevated.",
+          "diagnosis": "Ulcerative Colitis; Active disease.",
+          "prescribed": "Mesalamine 4 g daily; Gastroenterology referral urgently.",
+          "doctor_notes": "Patient with active ulcerative colitis. Colonoscopy ordered. Gastroenterology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-11",
+          "reason": "Gastroenterology assessment.",
+          "symptoms": "Colonoscopy confirms active ulcerative colitis. Harvey-Bradshaw Index (HBI) 4. CRP 9 mg/L. Calprotectin markedly elevated.",
+          "diagnosis": "Ulcerative Colitis, moderate-to-severe.",
+          "prescribed": "Prednisone 40 mg daily tapering; Azathioprine 2.5 mg/kg daily initiated.",
+          "doctor_notes": "Gastroenterology assessment. Ulcerative Colitis confirmed on colonoscopy \u2014 moderate-to-severe. HBI 4. Initiating corticosteroid induction and azathioprine maintenance.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-13",
+          "reason": "Ulcerative Colitis \u2014 biologic therapy assessment.",
+          "symptoms": "HBI 4. CRP 9 mg/L. Ongoing conventional therapy.",
+          "diagnosis": "Ulcerative Colitis; Moderate activity, optimizing treatment.",
+          "prescribed": "Azathioprine 2 mg/kg (continue); Methotrexate 20 mg SC weekly added.",
+          "doctor_notes": "IBD management review. HBI 4 \u2014 mild disease activity. Patient has only trialled azathioprine monotherapy to date. Has not yet failed two conventional therapies as required. Adding methotrexate. Reassess for biologic eligibility in 6 months.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-07-30",
+          "reason": "IBD follow-up.",
+          "symptoms": "GI symptoms stabilizing on current therapy.",
+          "diagnosis": "Ulcerative Colitis; Ongoing management.",
+          "prescribed": "Repeat colonoscopy in 6 months. Continue therapy.",
+          "doctor_notes": "Conventional therapy ongoing. Reassess for biologic eligibility.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-036",
+      "name": "Demo Patient 036",
+      "age": 42,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-02",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 10 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 84 bpm. BP 114/77.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-02",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class III. LVEF 39% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with reduced ejection fraction; NYHA Class III.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 39% \u2014 reduced ejection fraction (HFrEF). Patient classified as NYHA Class III heart failure. BNP elevated at 491 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-05",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on minimal exertion. LVEF 39%. NYHA III.",
+          "diagnosis": "Chronic heart failure; Reduced ejection fraction.",
+          "prescribed": "Vericiguat 2.5 mg daily (SA requested); continue GDMT.",
+          "doctor_notes": "Patient 19 years of age with symptomatic chronic heart failure. LVEF 39% (reduced ejection fraction, < 45%). NYHA Class III symptoms. Recent course of IV diuretics in outpatient setting within the last 6 months. Currently on optimal standard of care therapy including ACE inhibitor (lisinopril), beta-blocker (carvedilol), and MRA (spironolactone). Vericiguat proposed as adjunct therapy. Patient is 18 years of age or older. Special Authority request submitted for vericiguat.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-07-14",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. SA approval received. Vericiguat initiated. Patient tolerating well.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-037",
+      "name": "Demo Patient 037",
+      "age": 25,
+      "city": "Langley",
+      "gender": "M",
+      "target_drug": "demo multiple sclerosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-05-30",
+          "reason": "Visual disturbance and limb weakness.",
+          "symptoms": "Episode of optic neuritis resolved over 6 weeks. Transient right arm weakness. Fatigue and cognitive fog. EDSS 3.6. MRI brain: 9 T2 lesions.",
+          "diagnosis": "Relapsing-remitting multiple sclerosis (RRMS); Active disease.",
+          "prescribed": "Methylprednisolone 1000 mg IV x 3 days; Neurology referral.",
+          "doctor_notes": "Patient with MS relapse. MRI confirms active inflammatory disease. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-08-15",
+          "reason": "Neurology \u2014 MS assessment.",
+          "symptoms": "EDSS 3.6. 3 clinical relapses in past 12 months. MRI: new T2 lesions on annual MRI.",
+          "diagnosis": "Relapsing-remitting MS; Active disease on MRI.",
+          "prescribed": "Interferon beta-1a (Avonex) 30 mcg IM weekly initiated.",
+          "doctor_notes": "Neurologist assessment. RRMS confirmed. EDSS 3.6. Annualized relapse rate 3 relapses/year. Initiating first-line DMT (interferon beta-1a).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-01",
+          "reason": "MS \u2014 high-efficacy DMT assessment.",
+          "symptoms": "EDSS 3.6. Active disease on first-line DMT.",
+          "diagnosis": "Relapsing-remitting MS.",
+          "prescribed": "Demo (SA requested by neurologist).",
+          "doctor_notes": "Neurology follow-up for highly active RRMS. EDSS 3.6. Annualized relapse rate 3 relapses in past 12 months. MRI demonstrates new T2/FLAIR lesions despite first-line DMT. Patient has failed interferon beta-1a (inadequate efficacy \u2014 3 relapses on therapy). Has also trialled glatiramer acetate \u2014 discontinued due to injection site reactions. Meets criteria for highly active MS requiring second-line high-efficacy DMT. Special Authority request submitted by neurologist for demo multiple sclerosis therapy. Baseline MRI, JC virus antibody index, CBC, LFTs completed.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-12",
+          "reason": "MS follow-up.",
+          "symptoms": "Neurological status stable on high-efficacy therapy.",
+          "diagnosis": "RRMS; Stable.",
+          "prescribed": "Annual MRI. Continue DMT. Monitor CBC and LFTs.",
+          "doctor_notes": "SA approved. High-efficacy DMT initiated. No new relapses in 6 months.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-038",
+      "name": "Demo Patient 038",
+      "age": 47,
+      "city": "Abbotsford",
+      "gender": "M",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-02-07",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 5 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-04-06",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -3.4, hip -3.2. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -3.4.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -3.4 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-06-28",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -3.4. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -3.4 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-039",
+      "name": "Demo Patient 039",
+      "age": 50,
+      "city": "Kelowna",
+      "gender": "F",
+      "target_drug": "demo biologic for atopic dermatitis",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-06-02",
+          "reason": "Severe eczema flare.",
+          "symptoms": "Widespread pruritic, erythematous, oozing plaques on trunk, extremities, and face. EASI score 38. vIGA-AD score 3. Sleep disruption due to itch. Prior use of topical corticosteroids and calcineurin inhibitors.",
+          "diagnosis": "Atopic dermatitis (AD), moderate-to-severe.",
+          "prescribed": "Topical mometasone 0.1% cream, tacrolimus 0.1% ointment.",
+          "doctor_notes": "Patient with long-standing moderate-to-severe atopic dermatitis. Extensive involvement noted. EASI score documented. Topical therapy reinforced. Dermatology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-11-03",
+          "reason": "Dermatology assessment \u2014 atopic dermatitis.",
+          "symptoms": "EASI score 38. vIGA-AD 3. Widespread involvement. Sleep disruption. Maximally tolerated topical therapies have been inadequate.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; Inadequate response to topicals.",
+          "prescribed": "Phototherapy referral; Methotrexate 10 mg weekly initiated.",
+          "doctor_notes": "Dermatology assessment completed. Patient has severe atopic dermatitis with EASI 38 and vIGA-AD 3. Patient has failed maximally tolerated topical therapies for AD. Initiating methotrexate as systemic immunomodulator. Phototherapy course completed \u2014 inadequate benefit.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-03-05",
+          "reason": "Biologic therapy consideration for AD.",
+          "symptoms": "EASI 38. vIGA-AD 3. Significant impact on quality of life.",
+          "diagnosis": "Moderate-to-severe atopic dermatitis; {'Biologic therapy indicated' if qualifying else 'systemic therapy ongoing'}.",
+          "prescribed": "Demo (SA requested by dermatologist).",
+          "doctor_notes": "Patient assessed by dermatologist with expertise in management of moderate-to-severe atopic dermatitis. EASI score 38 (\u2265 16) and vIGA-AD score 3 (\u2265 3) documented. Patient has failed maximally tolerated medical topical therapies combined with phototherapy. Has also failed treatment with at least 2 of the 4 systemic immunomodulators: methotrexate (inadequate response after 3 months) and cyclosporine (discontinued due to renal side effects). Patient 12 years of age or older. Biologic therapy (dupilumab / abrocitinib) requested under Special Authority. Special Authority request submitted by dermatologist.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-04",
+          "reason": "AD follow-up.",
+          "symptoms": "Skin significantly improved on current regimen.",
+          "diagnosis": "Atopic dermatitis; {'Responding to biologic therapy' if qualifying else 'Ongoing management'}.",
+          "prescribed": "Continue current therapy. Reassess EASI in 3 months.",
+          "doctor_notes": "SA approved. Biologic therapy initiated. EASI improving.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-040",
+      "name": "Demo Patient 040",
+      "age": 32,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo bowel therapy for ulcerative colitis",
+      "qualifies": false,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-07-29",
+          "reason": "Abdominal pain and diarrhea.",
+          "symptoms": "Crampy abdominal pain, 6 loose stools/day, rectal bleeding, fatigue. Weight loss 8 kg over 4 months. CRP 7 mg/L. Fecal calprotectin elevated.",
+          "diagnosis": "Ulcerative Colitis; Active disease.",
+          "prescribed": "Mesalamine 4 g daily; Gastroenterology referral urgently.",
+          "doctor_notes": "Patient with active ulcerative colitis. Colonoscopy ordered. Gastroenterology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-05",
+          "reason": "Gastroenterology assessment.",
+          "symptoms": "Colonoscopy confirms active ulcerative colitis. Harvey-Bradshaw Index (HBI) 4. CRP 7 mg/L. Calprotectin markedly elevated.",
+          "diagnosis": "Ulcerative Colitis, moderate-to-severe.",
+          "prescribed": "Prednisone 40 mg daily tapering; Azathioprine 2.5 mg/kg daily initiated.",
+          "doctor_notes": "Gastroenterology assessment. Ulcerative Colitis confirmed on colonoscopy \u2014 moderate-to-severe. HBI 4. Initiating corticosteroid induction and azathioprine maintenance.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-18",
+          "reason": "Ulcerative Colitis \u2014 biologic therapy assessment.",
+          "symptoms": "HBI 4. CRP 7 mg/L. Ongoing conventional therapy.",
+          "diagnosis": "Ulcerative Colitis; Moderate activity, optimizing treatment.",
+          "prescribed": "Azathioprine 2 mg/kg (continue); Methotrexate 20 mg SC weekly added.",
+          "doctor_notes": "IBD management review. HBI 4 \u2014 mild disease activity. Patient has only trialled azathioprine monotherapy to date. Has not yet failed two conventional therapies as required. Adding methotrexate. Reassess for biologic eligibility in 6 months.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-10-15",
+          "reason": "IBD follow-up.",
+          "symptoms": "GI symptoms stabilizing on current therapy.",
+          "diagnosis": "Ulcerative Colitis; Ongoing management.",
+          "prescribed": "Repeat colonoscopy in 6 months. Continue therapy.",
+          "doctor_notes": "Conventional therapy ongoing. Reassess for biologic eligibility.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-041",
+      "name": "Demo Patient 041",
+      "age": 49,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-06",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 9 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 58.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-16",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "9 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 9 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-08",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "9 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 9 migraine days per month \u2014 episodic migraine (\u2265 8 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-042",
+      "name": "Demo Patient 042",
+      "age": 50,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-28",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 16 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 65.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-28",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "16 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 16 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-24",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "16 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 16 migraine days per month \u2014 chronic migraine (\u2265 15 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-043",
+      "name": "Demo Patient 043",
+      "age": 69,
+      "city": "Burnaby",
+      "gender": "F",
+      "target_drug": "demo asthma biologic",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-11-06",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 4 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 94%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-23",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 4.5. 4 exacerbations past 12 months. IgE 740 kIU/L. Blood eosinophils 341 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 4.5. IgE 740. Eosinophils 341. Positive perennial aeroallergen skin test. Eligible for biologic therapy assessment.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-14",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 4.5. 4 exacerbations/year. IgE 740. Eos 341.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Demo injection (SA requested by respirologist).",
+          "doctor_notes": "Biologic therapy assessment for severe allergic asthma. Patient 12 years or older. Symptoms inadequately controlled on high-dose ICS/LABA for minimum 6 months. ACQ-5 score 4.5 (above MCID threshold). 4 clinically significant asthma exacerbations in the past 12 months. Positive skin test to perennial aeroallergen (house dust mite). Baseline IgE 740 kIU/L and weight documented prior to initiation. Blood eosinophils 341 cells/\u00b5L. Special Authority request submitted by respirologist for omalizumab / mepolizumab. Baseline ACQ-5 documented for renewal comparison.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-044",
+      "name": "Demo Patient 044",
+      "age": 33,
+      "city": "Victoria",
+      "gender": "F",
+      "target_drug": "demo asthma biologic",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-08-12",
+          "reason": "Poorly controlled asthma.",
+          "symptoms": "Recurrent wheeze, cough, and dyspnea. 0 exacerbations in past 12 months requiring oral steroids. On high-dose ICS/LABA. SpO2 96%. Diffuse wheeze on auscultation.",
+          "diagnosis": "Severe allergic asthma; Inadequate control.",
+          "prescribed": "Prednisone 40 mg x 5 days; Increase ICS dose.",
+          "doctor_notes": "Severe asthma with poor control on high-dose ICS/LABA. Allergy testing ordered. Respirology referral.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-01-29",
+          "reason": "Respirology assessment \u2014 severe asthma.",
+          "symptoms": "ACQ-5 score 0.8. 0 exacerbations past 12 months. IgE 50 kIU/L. Blood eosinophils 92 cells/\u00b5L. Positive skin test to house dust mite.",
+          "diagnosis": "Severe allergic asthma; Inadequately controlled on high-dose ICS.",
+          "prescribed": "Optimize ICS/LABA/LAMA. Tiotropium add-on initiated.",
+          "doctor_notes": "Severe asthma assessment. ACQ-5 0.8. IgE 50. Eosinophils 92. Controlled \u2014 biologic not indicated.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-04-06",
+          "reason": "Severe asthma \u2014 biologic therapy assessment.",
+          "symptoms": "ACQ-5 0.8. 0 exacerbations/year. IgE 50. Eos 92.",
+          "diagnosis": "Severe allergic asthma.",
+          "prescribed": "Fluticasone/salmeterol 500/50 BID; Tiotropium 18 mcg daily.",
+          "doctor_notes": "Asthma review. ACQ-5 0.8 \u2014 well-controlled. 0 exacerbation in past year. IgE 50. Does not meet threshold for biologic therapy. Continue optimizing ICS/LABA. Add tiotropium. Reassess if control deteriorates.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-045",
+      "name": "Demo Patient 045",
+      "age": 74,
+      "city": "Maple Ridge",
+      "gender": "F",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": false,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-10-09",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 5 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-12-02",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -3.3, hip -3.1. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -3.3.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -3.3 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-05-11",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -3.3. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -3.3 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-046",
+      "name": "Demo Patient 046",
+      "age": 48,
+      "city": "Vancouver",
+      "gender": "F",
+      "target_drug": "demo migraine preventive",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-04-07",
+          "reason": "Frequent migraines.",
+          "symptoms": "Recurrent severe unilateral throbbing headaches with nausea, photophobia, phonophobia. Average 20 migraine days per month over the past 3 months. Significant functional impairment. HIT-6 score 58.",
+          "diagnosis": "Episodic migraine, high-frequency.",
+          "prescribed": "Sumatriptan 100 mg PRN; Neurology referral.",
+          "doctor_notes": "Patient with frequent episodic migraines. ICHD-3 criteria met. Preventive therapy indicated. Neurology referral provided.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2023-10-01",
+          "reason": "Neurology \u2014 migraine prevention.",
+          "symptoms": "20 migraine days/month. Failed acute therapy. Initiating preventive treatment.",
+          "diagnosis": "High-frequency episodic migraine; Preventive therapy initiated.",
+          "prescribed": "Topiramate 50 mg BID initiated.",
+          "doctor_notes": "Neurologist assessment. 20 migraine days/month. Initiating topiramate as first-line migraine prophylaxis. Migraine diary requested.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-15",
+          "reason": "Migraine \u2014 CGRP inhibitor assessment.",
+          "symptoms": "20 migraine days/month. Multiple preventive failures.",
+          "diagnosis": "Migraine, {'chronic/episodic' if qualifying else 'episodic'}; {'Refractory to multiple preventives' if qualifying else 'Initiating prophylaxis'}.",
+          "prescribed": "Demo injection (SA requested by neurologist).",
+          "doctor_notes": "Migraine management review. Patient with 20 migraine days per month \u2014 chronic migraine (\u2265 15 days/month). Has failed adequate trials of at least three preventive therapies: topiramate 100 mg BID (2 months \u2014 inadequate response), propranolol 80 mg BID (3 months \u2014 inadequate response), amitriptyline 75 mg (2 months \u2014 discontinued due to sedation). Candidate for CGRP monoclonal antibody therapy under Special Authority. Special Authority request submitted by neurologist for demo migraine preventive. Baseline migraine frequency documented via 90-day headache diary.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-047",
+      "name": "Demo Patient 047",
+      "age": 50,
+      "city": "Courtenay",
+      "gender": "F",
+      "target_drug": "demo osteoporosis therapy",
+      "qualifies": true,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-12-24",
+          "reason": "Fall and back pain \u2014 osteoporosis screening.",
+          "symptoms": "Vertebral fracture on plain X-ray. Back pain after minimal trauma. Height loss 2 cm. DEXA scan ordered.",
+          "diagnosis": "Osteoporosis; Vertebral fracture.",
+          "prescribed": "Calcium 1000 mg daily; Vitamin D 1000 IU daily. DEXA ordered.",
+          "doctor_notes": "Patient presents with osteoporosis risk factors. DEXA ordered. Calcium and vitamin D initiated. Fall prevention counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-06-10",
+          "reason": "DEXA scan results.",
+          "symptoms": "DEXA scan: T-score lumbar spine -2.9, hip -2.7. Vertebral fracture confirmed.",
+          "diagnosis": "Postmenopausal osteoporosis; T-score -2.9.",
+          "prescribed": "Alendronate 70 mg weekly initiated.",
+          "doctor_notes": "DEXA confirms osteoporosis: T-score -2.9 (< -2.5 \u2014 osteoporosis). Vertebral fracture present. Initiating bisphosphonate therapy.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-08-25",
+          "reason": "Osteoporosis advanced therapy assessment.",
+          "symptoms": "T-score -2.9. Vertebral fracture history. Risk stratification completed.",
+          "diagnosis": "Postmenopausal osteoporosis.",
+          "prescribed": "Demo (SA requested).",
+          "doctor_notes": "Postmenopausal osteoporosis management. DEXA T-score -2.9 (< -2.5 \u2014 diagnostic). Vertebral fracture documented on imaging. Has failed or is intolerant to bisphosphonate therapy: alendronate discontinued after 2 years due to jaw discomfort and GERD. Meets criteria for denosumab / zoledronic acid / romosozumab under Special Authority. Special Authority request submitted for demo osteoporosis therapy. 25-OH Vitamin D level adequate. Patient is postmenopausal female.",
+          "is_synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "DEMO-048",
+      "name": "Demo Patient 048",
+      "age": 51,
+      "city": "Vancouver",
+      "gender": "M",
+      "target_drug": "demo heart therapy for chronic heart failure",
+      "qualifies": false,
+      "has_family_doctor": true,
+      "is_synthetic_profile": true,
+      "visits": [
+        {
+          "date": "2023-11-28",
+          "reason": "Shortness of breath and lower extremity edema.",
+          "symptoms": "Progressive dyspnea on exertion for 7 weeks. Bilateral ankle edema 2+. JVD present. Crackles at lung bases. HR 85 bpm. BP 119/87.",
+          "diagnosis": "Congestive heart failure; Dyspnea.",
+          "prescribed": "Furosemide 40 mg daily initiated. Echocardiogram ordered.",
+          "doctor_notes": "Patient presents with signs and symptoms consistent with decompensated heart failure. Echocardiogram ordered urgently. BMP and BNP ordered. Dietary sodium restriction counselled.",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-02-20",
+          "reason": "Heart failure workup results.",
+          "symptoms": "Dyspnea with minimal exertion. NYHA Class II. LVEF 49% on echo. BNP elevated.",
+          "diagnosis": "Heart failure with preserved ejection fraction; NYHA Class II.",
+          "prescribed": "Lisinopril 10 mg daily; Carvedilol 6.25 mg BID; Furosemide 40 mg daily; Spironolactone 25 mg daily.",
+          "doctor_notes": "Echocardiogram results: left ventricular ejection fraction (LVEF) 49% \u2014 preserved ejection fraction (HFpEF). Patient classified as NYHA Class II heart failure. BNP elevated at 596 pg/mL. Initiating guideline-directed medical therapy (GDMT): ACE inhibitor (lisinopril 10 mg daily), beta-blocker (carvedilol 6.25 mg BID), and mineralocorticoid receptor antagonist (spironolactone 25 mg daily).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-08-10",
+          "reason": "Cardiology follow-up \u2014 advanced HF therapy.",
+          "symptoms": "Dyspnea on moderate exertion. LVEF 49%. NYHA II.",
+          "diagnosis": "Chronic heart failure; Preserved ejection fraction.",
+          "prescribed": "Lisinopril 20 mg daily (increased); Carvedilol 12.5 mg BID (increased).",
+          "doctor_notes": "Patient with heart failure. LVEF 49% on echocardiogram \u2014 preserved ejection fraction. NYHA Class II symptoms. No hospitalizations in the past 6 months. Currently optimizing GDMT. Will reassess for advanced therapy options at next visit. Does not currently meet criteria for vericiguat (LVEF not < 45%).",
+          "is_synthetic": true
+        },
+        {
+          "date": "2024-12-07",
+          "reason": "Heart failure management review.",
+          "symptoms": "Patient reports stable symptoms. Tolerating medications well. No new hospitalizations.",
+          "diagnosis": "Heart failure; Stable.",
+          "prescribed": "Continue current regimen. Repeat echo in 3 months.",
+          "doctor_notes": "Heart failure management reviewed. Optimizing GDMT. Repeat echo ordered to reassess LVEF.",
+          "is_synthetic": true
+        }
+      ]
+    }
+  ]
+}
