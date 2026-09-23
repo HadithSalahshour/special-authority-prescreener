@@ -5,5 +5,5 @@ ollama>=0.4,<1
 PyPDF2>=3,<4
 rank-bm25>=0.2.2,<1
 requests>=2.32,<3
-sentence-transformers>=3.4,<6
+sentence-transformers>=6.1.0,<7
 uvicorn>=0.34,<1
