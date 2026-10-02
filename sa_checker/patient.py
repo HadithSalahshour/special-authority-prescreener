@@ -37,7 +37,12 @@ def assemble_notes(patient: dict) -> str:
             )
 
     if gender:
-        lines.append(f"Gender: {'Male' if gender == 'M' else 'Female'}")
+    gender_text = str(gender).strip()
+    gender_label = {
+        "M": "Male",
+        "F": "Female",
+    }.get(gender_text.upper(), gender_text)
+    lines.append(f"Gender: {gender_label}")
     if city:
         lines.append(f"City: {city}, British Columbia")
 
