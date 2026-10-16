@@ -25,7 +25,9 @@ class PatientTests(unittest.TestCase):
                                         "date": "2026-01-01",
                                         "reason": "Follow-up",
                                         "diagnosis": "Example diagnosis",
-                                        "doctor_notes": "Example local-only note.",
+                                        "doctor_notes": (
+                                            "Example local-only note."
+                                        ),
                                     }
                                 ],
                             }
@@ -40,7 +42,22 @@ class PatientTests(unittest.TestCase):
 
             self.assertIn("Demo Patient 001", notes)
             self.assertIn("Adult patient: yes", notes)
+            self.assertIn("Gender: Female", notes)
             self.assertIn("Example local-only note.", notes)
+
+    def test_unknown_gender_is_not_mislabeled(self):
+        patient = {
+            "name": "Demo Patient",
+            "age": 45,
+            "gender": "X",
+            "visits": [],
+        }
+
+        notes = assemble_notes(patient)
+
+        self.assertIn("Gender: Unknown", notes)
+        self.assertNotIn("Gender: Female", notes)
+        self.assertNotIn("Gender: Male", notes)
 
     def test_bundled_patients_are_safe_demo_data(self):
         data_path = (
@@ -48,6 +65,7 @@ class PatientTests(unittest.TestCase):
             / "data"
             / "demo_patients.json"
         )
+
         patients = json.loads(
             data_path.read_text(encoding="utf-8")
         )["patients"]
@@ -55,13 +73,23 @@ class PatientTests(unittest.TestCase):
         self.assertTrue(patients)
 
         patient_ids = []
+
         for patient in patients:
-            self.assertTrue(patient.get("is_synthetic_profile"))
-            self.assertTrue(patient["id"].startswith("DEMO-"))
-            self.assertTrue(patient["name"].startswith("Demo Patient "))
+            self.assertTrue(
+                patient.get("is_synthetic_profile")
+            )
+            self.assertTrue(
+                patient["id"].startswith("DEMO-")
+            )
+            self.assertTrue(
+                patient["name"].startswith("Demo Patient ")
+            )
             patient_ids.append(patient["id"])
 
-        self.assertEqual(len(patient_ids), len(set(patient_ids)))
+        self.assertEqual(
+            len(patient_ids),
+            len(set(patient_ids)),
+        )
 
 
 if __name__ == "__main__":
