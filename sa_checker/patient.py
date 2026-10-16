@@ -7,9 +7,9 @@ def load_patient(patient_id: str, json_path: str) -> dict | None:
     with open(json_path) as f:
         data = json.load(f)
 
-    for p in data["patients"]:
-        if p["id"].upper() == patient_id.upper():
-            return p
+    for patient in data["patients"]:
+        if patient["id"].upper() == patient_id.upper():
+            return patient
 
     return None
 
@@ -27,7 +27,7 @@ def assemble_notes(patient: dict) -> str:
     # Explicit adult/minor line — required for SA criteria like
     # "Approval is limited to adults".
     # BM25 needs the word "adult" to appear verbatim;
-    # dense needs the concept stated clearly.
+    # dense retrieval needs the concept stated clearly.
     if age:
         if int(age) >= 19:
             lines.append(
@@ -41,26 +41,34 @@ def assemble_notes(patient: dict) -> str:
             )
 
     if gender:
-        lines.append(f"Gender: {'Male' if gender == 'M' else 'Female'}")
+        normalized_gender = str(gender).strip().upper()
+        gender_label = {
+            "M": "Male",
+            "F": "Female",
+        }.get(normalized_gender, "Unknown")
+        lines.append(f"Gender: {gender_label}")
 
     if city:
         lines.append(f"City: {city}, British Columbia")
 
-    for v in patient.get("visits", []):
+    for visit in patient.get("visits", []):
         lines.append(
-            f"\n[Visit {v['date']} — Reason: {v.get('reason', '')}]"
+            f"\n[Visit {visit['date']} — "
+            f"Reason: {visit.get('reason', '')}]"
         )
 
-        if v.get("symptoms"):
-            lines.append(f"Symptoms: {v['symptoms']}")
+        if visit.get("symptoms"):
+            lines.append(f"Symptoms: {visit['symptoms']}")
 
-        if v.get("diagnosis"):
-            lines.append(f"Diagnosis: {v['diagnosis']}")
+        if visit.get("diagnosis"):
+            lines.append(f"Diagnosis: {visit['diagnosis']}")
 
-        if v.get("prescribed"):
-            lines.append(f"Prescribed: {v['prescribed']}")
+        if visit.get("prescribed"):
+            lines.append(f"Prescribed: {visit['prescribed']}")
 
-        if v.get("doctor_notes"):
-            lines.append(f"Doctor Notes: {v['doctor_notes']}")
+        if visit.get("doctor_notes"):
+            lines.append(
+                f"Doctor Notes: {visit['doctor_notes']}"
+            )
 
     return "\n".join(lines)
