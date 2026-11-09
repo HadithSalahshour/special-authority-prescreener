@@ -4,7 +4,7 @@ import json
 
 
 def load_patient(patient_id: str, json_path: str) -> dict | None:
-    with open(json_path) as f:
+    with open(json_path, encoding="utf-8") as f:
         data = json.load(f)
 
     for patient in data["patients"]:
